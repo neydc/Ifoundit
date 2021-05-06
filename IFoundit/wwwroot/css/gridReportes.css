@@ -1,0 +1,80 @@
+﻿.product_item {
+    overflow: hidden;
+    margin-bottom: 40px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid red;
+    box-shadow: 2px 2px 10px #666;
+}
+.product_item:hover {
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    border: initial;
+}
+.product_item_pic {
+    height: 260px;
+    width: 100%;
+    position: relative;
+    background-position: center center;
+}
+
+.product_item_pics {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    background-position: center center;
+}
+    .product_item_pics:hover {
+        height: 260px;
+        width: 100%;
+        zoom:1.12;
+        object-fit: cover;
+        position: relative;
+        background-position: center center;
+    }
+.product_text {
+    padding: 16px;
+    background: #ffffff;
+}
+    .product_text h6 {
+        color: #151515;
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        -webkit-transition: all, 0.3s;
+        -o-transition: all, 0.3s;
+        transition: all, 0.3s;
+    }
+    input [type=button], input[type=submit], input[type=reset] {
+    background-color: rgb(72 72 72 / 0.90);
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 #484848;
+    box-shadow: 0 10px 30px 0 #484848;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+    input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+        background-color: #484848;
+    }
+
+    input[type=button]:active, input[type=submit]:active, input[type=reset]:active {
+        -moz-transform: scale(0.95);
+        -webkit-transform: scale(0.95);
+        -o-transform: scale(0.95);
+        -ms-transform: scale(0.95);
+        transform: scale(0.95);
+    }

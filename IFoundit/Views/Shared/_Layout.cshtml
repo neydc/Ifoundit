@@ -14,6 +14,7 @@
     <script src="https://use.fontawesome.com/44b4026f96.js"></script>
     @*favicon*@
     <link rel="shortcut icon" type="image/jpg" href="/Images/Logo.png" />
+
 </head>
 <body>
     <header>
@@ -27,7 +28,7 @@
                 <div class="collapse navbar-collapse" id="nvbCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item pl-1">
-                            <a class="nav-link" href="#"><i class="fa fa-home fa-fw mr-1"></i>Inicio</a>
+                            <a class="nav-link" href="/"><i class="fa fa-home fa-fw mr-1"></i>Inicio</a>
                         </li>
                         <li class="nav-item pl-1">
                             <a class="nav-link" href="#"><i class="fa fa-info-circle fa-fw mr-1"></i>Nosotros</a>
@@ -36,7 +37,7 @@
                                 <a class="nav-link" href="#"><i class="fa fa-th-list fa-fw mr-1"></i>Nosotros</a>
                             </li>*@
                         <li class="nav-item pl-1">
-                            <a class="nav-link" href="#"><i class="fa fa-user fa-fw"></i>Productos</a>
+                            <a class="nav-link" href="/reporte"><i class="fa fa-user fa-fw"></i>Reportes</a>
                         </li>
                         <li class="nav-item pl-1">
                             <a class="nav-link" href="#"><i class="fa fa-phone fa-fw mr-1"></i>Contacto</a>
@@ -47,9 +48,16 @@
                                     Cuenta
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Login</a>
-                                    <a class="dropdown-item" href="#">Registrarse</a>
-                                    @*<a class="dropdown-item" href="#"><i class="fa fa-sign-in fa-fw mr-1"></i>Salir</a>*@
+                                    @if (ViewBag.Usuario == null)
+                                    {
+                                        <a class="dropdown-item" href="/login">Login</a>
+                                        <a class="dropdown-item" href="/register">Registrarse</a>
+                                        }
+
+                                    @if (ViewBag.Usuario != null)
+                                    {
+                                        <a class="dropdown-item" href="/Login/Logout"><i class="fa fa-sign-in fa-fw mr-1"></i>Cerrar Sesión</a>
+                                    }
                                 </div>
                             </div>
                         </li>

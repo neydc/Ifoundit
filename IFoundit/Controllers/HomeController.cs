@@ -1,4 +1,5 @@
-﻿using IFoundit.Models;
+﻿using IFoundit.DB.Maps;
+using IFoundit.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,14 +13,21 @@ namespace IFoundit.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly MkContext context;
+        public HomeController(ILogger<HomeController> logger, MkContext context)
         {
             _logger = logger;
+            this.context = context;
         }
+      
 
         public IActionResult Index()
         {
+            Usuario user = LoggedUser();
+            if (user!=null)
+            {
+                ViewBag.Usuario = user;
+            }
             return View();
         }
 
@@ -33,5 +41,16 @@ namespace IFoundit.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        private Usuario LoggedUser()
+        {
+            var claim = HttpContext.User.Claims.FirstOrDefault();
+            if (claim!=null)
+            {
+                var user = context.Usuarios.Where(o => o.Correo == claim.Value).FirstOrDefault();
+                return user;
+            }
+            return null;
+        }
     }
 }
+
