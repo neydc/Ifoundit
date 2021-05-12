@@ -15,6 +15,9 @@ namespace IFoundit.Models
         public string Correo{ get; set; }
         public string Contrasenia{ get; set; }
         public char Sexo { get; set; }
+        public string Celular { get; set; }
+
+        public List < Objeto>Objetos { get; set; }
 
     }
 }

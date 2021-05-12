@@ -1,0 +1,42 @@
+﻿
+.div, .img {
+    display: block;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.centered {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 4px 4px 3px #000;
+    position: absolute;
+    top: 6%;
+    left: 16%;
+}
+
+.centered1 {
+    color: white;
+    text-shadow: 4px 4px 3px #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 15%;
+    left: 16%;
+}
+
+@media (max-width: 992px) {
+    footer .cizgi {
+        border-right: none;
+    }
+    .centered {
+        left: 14%;
+        font-size: 30px;
+        right: 10%;
+    }
+    .centered1 {
+        top: 23%;
+        left: 14%;
+        font-size: 26px;
+        right: 10%;
+    }
+}

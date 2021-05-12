@@ -13,7 +13,11 @@ namespace IFoundit.Models
         public DateTime FechaPublicacion { get; set; }
         public string Recompensa { get; set; }
         public string Imagen { get; set; }
+        public string Categoria { get; set; }
+        public string Estado { get; set; }
         public int IdUsuario { get; set; }
+
+        public Usuario Usuario{ get; set; }
 
     }
 }

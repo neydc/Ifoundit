@@ -14,11 +14,13 @@ namespace IFoundit.DB.Maps
         }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Objeto> Objetos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new ObjetoMap());
+            modelBuilder.ApplyConfiguration(new CategoriaMap());
         }
     }
 }

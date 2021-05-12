@@ -11,5 +11,7 @@ namespace IFoundit.DB.Maps
             builder.ToTable("Objeto");
             builder.HasKey(a => a.Id);
         }
+
+        
     }
 }

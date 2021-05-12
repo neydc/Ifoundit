@@ -147,3 +147,5 @@ C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\View
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Register\Index.cshtml.g.cs
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Reporte\Index.cshtml.g.cs
+C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Reporte\Create.cshtml.g.cs
+C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Reporte\MisReportes.cshtml.g.cs

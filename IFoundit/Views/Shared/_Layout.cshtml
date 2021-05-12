@@ -56,25 +56,25 @@
 
                                     @if (ViewBag.Usuario != null)
                                     {
+                                        <a class="dropdown-item" href="/reporte/MisReportes"><i class="fa fa-sign-in fa-fw mr-1"></i>Mis Reportes</a>
                                         <a class="dropdown-item" href="/Login/Logout"><i class="fa fa-sign-in fa-fw mr-1"></i>Cerrar Sesión</a>
                                     }
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item pl-1">
+                        @*<li class="nav-item pl-1">
                             <a class="nav-link" href="#">
                                 <input class="search" placeholder="Buscar" id="inputPassword">
                                 <i class="fa fa-search"></i>
                             </a>
-                        </li>
-
+                        </li>*@
                     </ul>
                 </div>
             </div>
         </nav>
         <!--# Navbar #-->
     </header>
-    <div class="container">
+    <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -88,9 +88,9 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 cizgi">
                         <div class="card bg-secondary border-0">
                             <div class="card-body text-light text-center">
-                                <h5 class="card-title text-white display-4" style="font-size:30px">Telif Hakkı</h5>
+                                <h5 class="card-title text-white display-4" style="font-size:30px">Ifoundit</h5>
                                 <p class="d-inline lead">
-                                    Tüm Hakları Saklıdır © 2018<br>
+                                    Todos los derechos reservados © 2021<br>
                                     <a href="#" class="text-light d-block lead">Blog</a>
                                 </p>
 

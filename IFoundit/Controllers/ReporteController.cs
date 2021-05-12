@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using IFoundit.DB.Maps;
+using IFoundit.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,15 +14,45 @@ namespace IFoundit.Controllers
 {
     public class ReporteController : Controller
     {
-        // GET: ReporteController
+        private readonly MkContext context;
+        [Obsolete]
+        private IHostingEnvironment ihostingEnvironment;
+
+        [Obsolete]
+        public ReporteController(MkContext context, IHostingEnvironment _hostingEnvironment)
+        {
+            this.context = context;
+            ihostingEnvironment = _hostingEnvironment;
+        }
         public ActionResult Index()
         {
-            return View();
+            IEnumerable<Objeto> listObject = context.Objetos;
+         
+            var usuarios = context.Usuarios.ToList();
+            ViewBag.users = usuarios;
+            return View(listObject.ToList());
         }
 
+        public JsonResult getReportes() {
+            var objectos = context.Objetos.ToList();
+            return Json(objectos);
+        }
+
+        [Authorize]
+        [HttpGet]
         public ActionResult MisReportes()
         {
-            return View();
+            Usuario user = LoggedUser();
+            if (user!=null)
+            {
+                ViewBag.Usuario = user;
+                var misreportes = context.Objetos.Where(a=>a.IdUsuario==user.Id).ToList();
+                return View(misreportes.OrderByDescending(a => a.FechaPublicacion));
+            }
+            else
+            {
+            return View("","login");
+            }
         }
 
         // GET: ReporteController/Details/5
@@ -27,24 +62,36 @@ namespace IFoundit.Controllers
         }
 
         // GET: ReporteController/Create
+        [HttpGet]
         public ActionResult Create()
         {
+            var categorias = context.Categorias.ToList();
+            ViewBag.categorias = categorias;
             return View();
         }
 
         // POST: ReporteController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        [Obsolete]
+        public ActionResult Create(Objeto objeto, IFormFile photos)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+           
+                if (ModelState.IsValid)
+                {
+                    var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "PostImg", photos.FileName);
+                    var stream = new FileStream(path, FileMode.Create);
+                    photos.CopyToAsync(stream);
+                    objeto.FechaPublicacion = DateTime.Now;
+                    objeto.Imagen = photos.FileName;
+
+                    context.Add(objeto);
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
         }
 
         // GET: ReporteController/Edit/5
@@ -87,6 +134,16 @@ namespace IFoundit.Controllers
             {
                 return View();
             }
+        }
+        private Usuario LoggedUser()
+        {
+            var claim = HttpContext.User.Claims.FirstOrDefault();
+            if (claim != null)
+            {
+                var user = context.Usuarios.Where(o => o.Correo == claim.Value).FirstOrDefault();
+                return user;
+            }
+            return null;
         }
     }
 }

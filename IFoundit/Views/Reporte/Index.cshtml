@@ -3,72 +3,107 @@
     ViewData["Title"] = "Reportes";
 }
 <link href="~/css/gridReportes.css" rel="stylesheet" />
+<br />
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="text-right">
-                <input type="button" name="Reporte" value="Crear Reporte" />
-            </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="text-left">
+                      <input type="search" name="name" value="" placeholder="Buscar" />
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="text-right">
+                      <a class="button" href="/reporte/create">Crear</a>
+                  </div>
+              </div>
+          </div>
         </div>
-       
     </div>
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="product_item">
-                <div class="product_item_pic">
-                    <div class="product_item_pics">
-                        <img class="product_item_pics" src="/PostImg/billetera.png" alt="Alternate Text" />
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="product_item">
+                    <div class="product_item_pic">
+                        <div class="product_item_pics">
+                            <img class="product_item_pics" src="/PostImg/@item.Imagen" alt="Alternate Text" />
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                @foreach (var usuarios in ViewBag.users)
+                                {
+                                    @if (usuarios.Id == item.IdUsuario)
+                                    {
+                                        <a target="_blank" href="https://api.whatsapp.com/send?phone=@usuarios.Celular&text=Hola"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
+
+                                    }
+                                }
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    <div class="product_text">
+                        <h6>@item.Nombre</h6>
+                        @*<p>@item.Descripcion.substr(0, 50);</p>*@
+                        <p>@item.Descripcion</p>
+                        <p>@item.Recompensa</p>
                     </div>
                 </div>
-                <div class="product_text">
-                    <h6>Nombre</h6>
-                    <p>Descripción</p>
-                    <p>Recompensa</p>
-                </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="product_item">
-                <div class="product_item_pic">
-                    <div class="product_item_pics">
-                        <img class="product_item_pics" src="/PostImg/laptop.png" alt="Alternate Text" />
-                    </div>
-                </div>
-                <div class="product_text">
-                    <h6>Nombre</h6>
-                    <p>Descripción</p>
-                    <p>Recompensa</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="product_item">
-                <div class="product_item_pic">
-                    <div class="product_item_pics">
-                        <img class="product_item_pics" src="/PostImg/dni.png" alt="Alternate Text" />
-                    </div>
-                </div>
-                <div class="product_text">
-                    <h6>Nombre</h6>
-                    <p>Descripción</p>
-                    <p>Recompensa</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="product_item">
-                <div class="product_item_pic">
-                    <div class="product_item_pics">
-                        <img class="product_item_pics" src="/PostImg/llaves.png" alt="Alternate Text" />
-                    </div>
-                </div>
-                <div class="product_text">
-                    <h6>Nombre</h6>
-                    <p>Descripción</p>
-                    <label>Recompensa</label>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>
+<div id="root">
+    <h1>{{mensaje}}</h1>
+    <div>
+        <input class="form-control" type="text" v-model="txtbuscar" placeholder="buscar" />
+        <ul>
+            @*<li v-for="item in lista">{{item.nombre}}</li>*@
+            <li v-for="item in listaFiltrada">{{item.nombre}}</li>
+        </ul>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var url = '@Url.RouteUrl("Default")';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#root",
+            data: {
+                mensaje: 'Hello World',
+                lista: [],
+                txtbuscar:''
+            },
 
+            computed: {
+                listaFiltrada: function () {
+                    var arreglo = this.lista;
+                    var query = this.txtbuscar;
+
+                    if (query !== "") {
+                        arreglo = this.lista.filter(function (cliente) {
+                            return (cliente.nombre.toLowerCase() + " ").indexOf(query.toLowerCase())> -1;
+                        })
+                    }
+                    return arreglo;
+                }
+            },
+
+            created: function () {
+                axios.get(url+"/getReportes")
+                    .then(function (response) {
+                        console.table(response.data);
+                        app.lista = response.data;
+                    })
+                    .catch(function (error) {
+                        console.log(error)
+                    });
+            }
+        })
+    </script>
+}

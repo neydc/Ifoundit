@@ -8,14 +8,12 @@ using System.Threading.Tasks;
 
 namespace IFoundit.DB.Maps
 {
-    public class UsuarioMap : IEntityTypeConfiguration<Usuario>
+    public class CategoriaMap : IEntityTypeConfiguration<Categoria>
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public void Configure(EntityTypeBuilder<Categoria> builder)
         {
-            builder.ToTable("Usuario");
+            builder.ToTable("Categoria");
             builder.HasKey(a => a.Id);
-
-            builder.HasMany(a=>a.Objetos).WithOne(a=>a.Usuario).HasForeignKey(a=>a.IdUsuario);
         }
     }
 }

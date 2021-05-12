@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+<link href="~/css/gridReportes.css" rel="stylesheet" />
+<br/>
+<div class="container">
+    <h3 style="color:#808080">Crear reporte</h3>
+    <div class="container">
+        <form action="/Reporte/Create" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <span>Nombre</span>
+                        <input class="form-control" type="text" name="Nombre" value="" />
+                    </div>
+                    <div>
+                        <span>Categoría</span>
+                        <select class="form-control" name="Categoria">
+                            <option value="">--Seleccione--</option>
+                            @foreach (var item in ViewBag.categorias)
+                            {
+                                <option value="@item.Nombre">@item.Nombre</option>
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <span>Descripción</span>
+                        <textarea name="Descripcion" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <div>
+                            <span>Recompensa</span>
+                            <input class="form-control" type="text" name="Recompensa" value="" />
+                        </div>
+                        <div>
+                            <span>Estado</span>
+                            <select class="form-control" name="Estado">
+                                <option value="">--Seleccione--</option>
+                                <option value="Perdido">Perdido</option>
+                                <option value="Encontrado">Encontrado</option>
+                            </select>
+                        </div>
+                        <span>Imagen</span>
+                        <input class="form-control-file" type="file" name="photos" value="" />
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <button class="button">Crear</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a style="color:#808080" href="/reporte/">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
