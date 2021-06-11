@@ -14,7 +14,6 @@
     <script src="https://use.fontawesome.com/44b4026f96.js"></script>
     @*favicon*@
     <link rel="shortcut icon" type="image/jpg" href="/Images/Logo.png" />
-
 </head>
 <body>
     <header>
@@ -50,8 +49,8 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     @if (ViewBag.Usuario == null)
                                     {
-                                        <a class="dropdown-item" href="/login">Login</a>
-                                        <a class="dropdown-item" href="/register">Registrarse</a>
+                                        <a class="dropdown-item" href="/auth/signin">Login</a>
+                                        <a class="dropdown-item" href="/auth/signup">Registrarse</a>
                                         }
 
                                     @if (ViewBag.Usuario != null)
@@ -137,7 +136,7 @@
                         <div class="text-center">
                             <p style="color:white">
                                 &copy; 2021 - IFoundit Diseño y Programación
-                                <a style="color:white" href=""><strong>Ing. Neiser Díaz</strong></a>
+                                <a style="color:white" href=""><strong>...</strong></a>
                             </p>
                         </div>
                     </div>

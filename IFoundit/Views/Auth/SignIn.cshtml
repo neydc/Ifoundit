@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "SignIn";
+}
+
+<link href="~/css/layout.css" rel="stylesheet" />
+<br />
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <!-- Icon -->
+        <div class="fadeIn first">
+            @*<img id="icon" src="~/Images/recortada.png" />*@
+            <br />
+            <h4 style="color:#808080">Login</h4>
+        </div>
+        <br />
+        <!-- Login Form -->
+        <form action="/auth/signin" method="post">
+            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Incorrecto")</p>
+            <input type="text" id="login" class="fadeIn second" name="correo" placeholder="Correo*" value="@ViewBag.usuario">
+            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo")</p>
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña*" value="@ViewBag.password">
+            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Password")</p>
+            <div class="container">
+                <input type="submit" class="fadeIn fourth" value="Iniciar Sesión">
+            </div>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="/">¿Olvidó su contraseña?</a>
+        </div>
+
+    </div>
+</div>

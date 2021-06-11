@@ -32,7 +32,21 @@ namespace IFoundit.Controllers
         [HttpPost]
         public IActionResult SignIn(string correo, string password)
         {
-            if (correo!=null && password!=null)
+            if (correo==null && password==null)
+            {
+                if (string.IsNullOrEmpty(correo))
+                {
+                    ModelState.AddModelError("Correo", "Correo Requerido");
+                }
+                if (string.IsNullOrEmpty(password))
+                {
+                    ModelState.AddModelError("Password", "Contraseña Requerida");
+                }
+                ViewBag.usuario = correo;
+                ViewBag.password = password;
+                return View();
+            }
+            if (correo != null && password != null)
             {
                 var userv = context.Usuarios.Where(o => o.Correo == correo && o.Contrasenia == password).FirstOrDefault();
                 if (userv != null)
@@ -47,14 +61,14 @@ namespace IFoundit.Controllers
                     HttpContext.SignInAsync(claimsPrincipal);
                     //return Json(new { dashboard = 1 });
                     return RedirectToAction("Index", "dashboard");
-                  
+
                 }
                 else
                 {
-                    return View("Index");
+                    ModelState.AddModelError("Incorrecto","Usuario y/o Contraseña incorrecta");
                 }
             }
-            return View("Index");
+            return View();
         }
 
         [HttpGet]

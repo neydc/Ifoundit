@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "SignUp";
+}
+<link href="~/css/register.css" rel="stylesheet" />
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <!-- Icon -->
+        <div class="fadeIn first">
+            @*<img id="icon" src="~/Images/recortada.png" />*@
+            <br />
+            <h4 style="color:#808080">Crea una cuenta</h4>
+        </div>
+        <br />
+        <!-- Login Form -->
+        <form action="/Register/SignUp" method="post">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" class="fadeIn second" name="Nombre" placeholder="Nombres" autocomplete="off">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" class="fadeIn third" name="Apellidos" placeholder="Apellidos" autocomplete="off">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" class="fadeIn second" name="Dni" placeholder="DNI" autocomplete="off">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <h6 style="color:#808080 "class="fadeIn second">Sexo</h6>
+                    <div style="display:inline; color:#808080">
+                        <input style="display:inline" class="fadeIn second" type="radio" value="M" name="Sexo">
+                        <p style="display:inline" class="fadeIn second">Masculino</p>
+                        <input style="display:inline" class="fadeIn second" type="radio" value="F" name="Sexo">
+                        <p style="display:inline" class="fadeIn second">Femenino</p>
+                        <input style="display:inline" class="fadeIn second" type="radio" value="N" name="Sexo">
+                        <p style="display:inline" class="fadeIn second">No Especifica</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="text" class="fadeIn second" name="Correo" placeholder="Correo" autocomplete="off">
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <input type="password" class="fadeIn third" name="Contrasenia" placeholder="Contraseña" autocomplete="off">
+                </div>
+                <br />
+                <br />
+                <div class="col-md-12 col-md-12">
+                    <input type="submit" class="fadeIn fourth" value="Registrarse">
+                </div>
+            </div>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="/auth/signin">Login</a>
+        </div>
+
+    </div>
+</div>
+

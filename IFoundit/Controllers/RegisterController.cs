@@ -24,13 +24,77 @@ namespace IFoundit.Controllers
         [HttpPost]
         public IActionResult SignUp(Usuario usuario)
         {
+            validarDatos(usuario);
             if (ModelState.IsValid)
             {
                 _context.Usuarios.Add(usuario);
                 _context.SaveChanges();
                 return RedirectToAction("","login");
             }
-            return View();
+            return View(usuario);
+        }
+
+        private void validarDatos(Usuario usuario)
+        {
+            if (string.IsNullOrEmpty(usuario.Nombre))
+            {
+                ModelState.AddModelError("Nombre","Ingrese su nombre");
+            }
+            if (string.IsNullOrEmpty(usuario.Dni))
+            {
+                ModelState.AddModelError("DNI","Ingrese su número de DNI");
+            }
+            if (string.IsNullOrEmpty(usuario.Contrasenia))
+            {
+                ModelState.AddModelError("Contrasenia","Ingrese su contraseña");
+            } 
+
+            if (usuario.Dni!=null|| usuario.Dni!="")
+            {
+                var searchUser = _context.Usuarios.Where(a=>a.Dni==usuario.Dni).FirstOrDefault();
+                ModelState.AddModelError("DNIDuplex", "Este número de DNI ya está registrado");
+            }
+            if (!validarLetras(usuario.Nombre))
+            {
+                ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
+            }
+            if (!validarLetras(usuario.Apellidos))
+            {
+                ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
+            }
+            if (!validarnUMEROS(usuario.Dni))
+            {
+                ModelState.AddModelError("DNINumeros", "Ingrese caracteres numéricos");
+            }
+        }
+        public bool validarnUMEROS(string numString)
+        {
+            char[] charArr = numString.ToCharArray();
+            foreach (char cd in charArr)
+            {
+                if (!char.IsNumber(cd))
+                    return false;
+            }
+            return true;
+        }
+        public bool validarLetras(string numString){
+            string parte = numString.Trim();
+            int count = parte.Count(s => s == ' ');
+            if (parte == "")
+            {
+                return false;
+            }
+            else if (count > 1)
+            {
+                return false;
+            }
+            char[] charArr = parte.ToCharArray();
+            foreach (char cd in charArr)
+            {
+                if (!char.IsLetter(cd) && !char.IsSeparator(cd))
+                    return false;
+            }
+            return true;
         }
     }
 }
