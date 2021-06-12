@@ -73,7 +73,7 @@ namespace IFoundit.Controllers
         [HttpGet]
         public IActionResult SignUp()
         {
-            return View();
+            return View(new Usuario());
         }
         [HttpPost]
         public IActionResult SignUp(Usuario usuario)
@@ -85,7 +85,14 @@ namespace IFoundit.Controllers
                 context.SaveChanges();
                 return RedirectToAction("", "login");
             }
+
             return View(usuario);
+        }
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
 
         private void validarDatos(Usuario usuario)
@@ -97,28 +104,63 @@ namespace IFoundit.Controllers
             if (string.IsNullOrEmpty(usuario.Dni))
             {
                 ModelState.AddModelError("DNI", "Ingrese su número de DNI");
+            }  
+            if (usuario.Sexo==0)
+            {
+                ModelState.AddModelError("Sexo", "Ingrese su Género");
+            } 
+            if (string.IsNullOrEmpty(usuario.Correo))
+            {
+                ModelState.AddModelError("Correo", "Ingrese su correo electrónico");
             }
             if (string.IsNullOrEmpty(usuario.Contrasenia))
             {
                 ModelState.AddModelError("Contrasenia", "Ingrese su contraseña");
             }
 
-            if (usuario.Dni != null || usuario.Dni != "")
+            if (usuario.Dni != null )
             {
                 var searchUser = context.Usuarios.Where(a => a.Dni == usuario.Dni).FirstOrDefault();
-                ModelState.AddModelError("DNIDuplex", "Este número de DNI ya está registrado");
-            }
-            if (!validarLetras(usuario.Nombre))
+                if (searchUser!=null)
+                {
+                    ModelState.AddModelError("DNIDuplex", "Este número de DNI ya está registrado");
+                }
+            } 
+            if (usuario.Correo != null)
             {
-                ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
+                var searchCorreo = context.Usuarios.Where(a => a.Correo == usuario.Correo).FirstOrDefault();
+                if (searchCorreo!=null)
+                {
+                    ModelState.AddModelError("CorreoDuplex", "Este correo ya está registrado");
+                }
             }
-            if (!validarLetras(usuario.Apellidos))
+            if (usuario.Nombre!=null)
             {
-                ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
+                if (!validarLetras(usuario.Nombre))
+                {
+                    ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
+                }
             }
-            if (!validarnUMEROS(usuario.Dni))
+            if (usuario.Apellidos!=null)
             {
-                ModelState.AddModelError("DNINumeros", "Ingrese caracteres numéricos");
+                if (!validarLetras(usuario.Apellidos))
+                {
+                    ModelState.AddModelError("ApellidoSoloLetras", "No se permiten números");
+                }
+            }
+            if (usuario.Apellidos!=null)
+            {
+                if (!validarLetras(usuario.Apellidos))
+                {
+                    ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
+                }
+            }
+            if (usuario.Dni!=null)
+            {
+                if (!validarnUMEROS(usuario.Dni))
+                {
+                    ModelState.AddModelError("DNINumeros", "Ingrese caracteres numéricos");
+                }
             }
         }
         public bool validarnUMEROS(string numString)

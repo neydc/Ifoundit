@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,13 +25,45 @@ namespace IFoundit.Controllers
             this.context = context;
             ihostingEnvironment = _hostingEnvironment;
         }
-        public ActionResult Index()
+      
+        public async Task<IActionResult> Index(string sortOrder, string query, string currentFilter, int? page)
         {
-            IEnumerable<Objeto> listObject = context.Objetos;
-         
+            var num = context.Objetos.ToList();
+            var contents = context.Objetos.AsQueryable();
             var usuarios = context.Usuarios.ToList();
             ViewBag.users = usuarios;
-            return View(listObject.ToList());
+
+            //Pagination
+            ViewData["TitleSort"] = string.IsNullOrEmpty(sortOrder) ? "Nom_Desc" : "";
+            ViewData["query"] = query;
+                if (query != null)
+                {
+                    page = 1;
+                }
+                else
+                {
+                    query = currentFilter;
+            }
+
+                ViewData["currentFilter"] = query;
+
+                if (!string.IsNullOrEmpty(query))
+                {
+                    contents = contents.Where(a=>a.Nombre.Contains(query));
+                    ViewBag.count = contents.Count();
+                }
+
+            switch (sortOrder)
+            {
+                case "Nom_Desc":
+                    contents = contents.OrderBy(s => s.Nombre);
+                    break;
+                default:
+                    contents = contents.OrderByDescending(s => s.FechaPublicacion);
+                    break;
+            }
+            int pageSize = 6;
+                return View(await PaginatedList<Objeto>.CreateAsync(contents.AsNoTracking(), page ?? 1, pageSize));
         }
 
         public JsonResult getReportes() {
@@ -63,6 +96,7 @@ namespace IFoundit.Controllers
 
         // GET: ReporteController/Create
         [HttpGet]
+        [Authorize]
         public ActionResult Create()
         {
             var categorias = context.Categorias.ToList();
@@ -75,7 +109,7 @@ namespace IFoundit.Controllers
         [Obsolete]
         public ActionResult Create(Objeto objeto, IFormFile photos)
         {
-           
+            validar(objeto);
                 if (ModelState.IsValid)
                 {
                     var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "PostImg", photos.FileName);
@@ -92,6 +126,26 @@ namespace IFoundit.Controllers
                 {
                     return View();
                 }
+        }
+
+        private void validar(Objeto objeto)
+        {
+            if (objeto.Nombre==null)
+            {
+                ModelState.AddModelError("Nombre","El campo nombre es requerido");
+            } 
+            if (objeto.Recompensa==null)
+            {
+                ModelState.AddModelError("Nombre","Ingrese una recompensa");
+            }
+            if (objeto.Categoria==null)
+            {
+                ModelState.AddModelError("Nombre","Campo nombre requerido");
+            }
+            if (objeto.Descripcion==null)
+            {
+                ModelState.AddModelError("Nombre","Campo nombre requerido");
+            }
         }
 
         // GET: ReporteController/Edit/5

@@ -4,15 +4,19 @@
 }
 <link href="~/css/gridReportes.css" rel="stylesheet" />
 <br/>
-<div class="container">
-    <h3 style="color:#808080">Crear reporte</h3>
+<div class="container shadow-lg" style=" -webkit-box-shadow: 5px 30px 30px 5px rgb(128 128 128);border-radius:8px">
+   <div class="row">
+       <div class="col-md-12 text-center">
+           <h4 style="color:#808080">¿Qué ha encontrado o perdido?</h4>
+       </div>
+   </div>
     <div class="container">
         <form action="/Reporte/Create" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div>
                         <span>Nombre</span>
-                        <input class="form-control" type="text" name="Nombre" value="" />
+                        <input class="form-control" type="text" name="Nombre" value="@*@Model.Nombre*@" placeholder="Mochila Verde" />
                     </div>
                     <div>
                         <span>Categoría</span>
@@ -20,7 +24,7 @@
                             <option value="">--Seleccione--</option>
                             @foreach (var item in ViewBag.categorias)
                             {
-                                <option value="@item.Nombre">@item.Nombre</option>
+                                <option  value="@item.Nombre @*@(item.Nombre?"Selected":"")*@">@item.Nombre</option>
                             }
                         </select>
                     </div>

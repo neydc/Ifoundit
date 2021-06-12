@@ -44,7 +44,14 @@
                         <li>
                             <div class="dropdown">
                                 <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Cuenta
+                                  @if (ViewBag.Usuario!=null)
+                                  {
+                                    <text>Bienvenido(a), @ViewBag.Usuario.Nombre</text>
+                                  }
+                                  else
+                                  {
+                                <text>Cuenta</text>
+                                  }
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     @if (ViewBag.Usuario == null)
@@ -55,8 +62,9 @@
 
                                     @if (ViewBag.Usuario != null)
                                     {
+                                        <a class="dropdown-item" href="/auth/profile"><i class="fa fa-sign-in fa-fw mr-1"></i>Editar perfil</a>
                                         <a class="dropdown-item" href="/reporte/MisReportes"><i class="fa fa-sign-in fa-fw mr-1"></i>Mis Reportes</a>
-                                        <a class="dropdown-item" href="/Login/Logout"><i class="fa fa-sign-in fa-fw mr-1"></i>Cerrar Sesión</a>
+                                        <a class="dropdown-item" href="/auth/logout"><i class="fa fa-sign-in fa-fw mr-1"></i>Cerrar Sesión</a>
                                     }
                                 </div>
                             </div>
@@ -89,8 +97,7 @@
                             <div class="card-body text-light text-center">
                                 <h5 class="card-title text-white display-4" style="font-size:30px">Ifoundit</h5>
                                 <p class="d-inline lead">
-                                    Todos los derechos reservados © 2021<br>
-                                    <a href="#" class="text-light d-block lead">Blog</a>
+                                    Búsqueda de objetos perdidos  y devolución de objetos encontrados
                                 </p>
 
                             </div>

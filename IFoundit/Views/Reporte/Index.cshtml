@@ -1,68 +1,115 @@
 ﻿
 @{
     ViewData["Title"] = "Reportes";
+    @model PaginatedList<IFoundit.Models.Objeto>
 }
 <link href="~/css/gridReportes.css" rel="stylesheet" />
 <br />
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="row">
-              <div class="col-md-6">
-                  <div class="text-left">
-                      <input type="search" name="name" value="" placeholder="Buscar" />
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="text-right">
-                      <a class="button" href="/reporte/create">Crear</a>
-                  </div>
-              </div>
-          </div>
-        </div>
-    </div>
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product_item">
-                    <div class="product_item_pic">
-                        <div class="product_item_pics">
-                            <img class="product_item_pics" src="/PostImg/@item.Imagen" alt="Alternate Text" />
-                        </div>
-                        <ul class="product__hover">
-                            <li>
-                                @foreach (var usuarios in ViewBag.users)
-                                {
-                                    @if (usuarios.Id == item.IdUsuario)
-                                    {
-                                        <a target="_blank" href="https://api.whatsapp.com/send?phone=@usuarios.Celular&text=Hola"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
-
-                                    }
-                                }
-                            </li>
-                           
-                        </ul>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="text-left">
+                        <form asp-action="Index" asp- method="get">
+                            <input type="search" name="query" value="@ViewData["query"]" placeholder="Buscar" />
+                        </form>
+                        Ordenar por:
+                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["TitleSort"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <text><strong> Nombre A-Z</strong></text>
+                        </a>
+                        |
+                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["TitleSort"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <text><strong> Fecha públicación A-Z</strong></text>
+                        </a>
+                        |
+                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["TitleSort"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <text><strong> Perdidos </strong></text>
+                        </a> 
+                        |
+                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["TitleSort"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <text><strong> Encontrados </strong></text>
+                        </a>
                     </div>
-                    <div class="product_text" style="color:#808080">
-                        <h6><strong>@item.Nombre</strong></h6>
-                        @*<p>@item.Descripcion.substr(0, 50);</p>*@
-                        <p>@item.Descripcion</p>
-                        <p><strong>Recompensa: @item.Recompensa</strong></p>
+                </div>
+              
+                <div class="col-md-4">
+                    <div class="text-right">
+                        <a class="button" href="/reporte/create">Crear</a>
                     </div>
                 </div>
             </div>
-        }
+        </div>
     </div>
-</div>
-<div id="root">
-    <h1>{{mensaje}}</h1>
-    <div>
-        <input class="form-control" type="text" v-model="txtbuscar" placeholder="buscar" />
-        <ul>
-            @*<li v-for="item in lista">{{item.nombre}}</li>*@
-            <li v-for="item in listaFiltrada">{{item.nombre}}</li>
-        </ul>
+    <div class="row" style="-webkit-box-shadow: 2px 10px 10px 2px rgb(128 128 128);border-radius:8px">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="product_item">
+                        <div class="product_item_pic">
+                            <div class="product_item_pics">
+                                <img class="product_item_pics" src="/PostImg/@item.Imagen" alt="Alternate Text" />
+                            </div>
+                            <ul class="product__hover">
+                                <li>
+                                    @foreach (var usuarios in ViewBag.users)
+                                    {
+                                        @if (usuarios.Id == item.IdUsuario)
+                                        {
+                                            <a target="_blank" href="https://api.whatsapp.com/send?phone=@usuarios.Celular&text=Hola"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
+
+                                        }
+                                    }
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="product_text" style="color:#808080">
+                            <h6><strong>@item.Nombre</strong></h6>
+                            @*<p>@item.Descripcion.substr(0, 50);</p>*@
+                            <p>@item.Descripcion</p>
+                            <p><strong>Recompensa: @item.Recompensa</strong></p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+<div class="col-lg-12">
+    <div class="">
+        @{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+        }
+
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-page="@(Model.PageIndex - 1)"
+           asp-route-currentFilter="@ViewData["currentFilter"]"
+           class="btn  @prevDisabled">
+            Anterior
+        </a>
+        <a asp-action="Index"
+           asp-route-sortOrder="@ViewData["CurrentSort"]"
+           asp-route-page="@(Model.PageIndex + 1)"
+           asp-route-currentFilter="@ViewData["currentFilter"]"
+           class="btn  @nextDisabled">
+            Siguiente
+        </a>
+    </div>
+    <div id="root">
+        <h1>{{mensaje}}</h1>
+        <div>
+            <input class="form-control" type="text" v-model="txtbuscar" placeholder="buscar" />
+            <ul>
+                @*<li v-for="item in lista">{{item.nombre}}</li>*@
+                <li v-for="item in listaFiltrada">{{item.nombre}}</li>
+            </ul>
+        </div>
     </div>
 </div>
 @section scripts{
@@ -77,7 +124,7 @@
             data: {
                 mensaje: 'Hello World',
                 lista: [],
-                txtbuscar:''
+                txtbuscar: ''
             },
 
             computed: {
@@ -87,7 +134,7 @@
 
                     if (query !== "") {
                         arreglo = this.lista.filter(function (cliente) {
-                            return (cliente.nombre.toLowerCase() + " ").indexOf(query.toLowerCase())> -1;
+                            return (cliente.nombre.toLowerCase() + " ").indexOf(query.toLowerCase()) > -1;
                         })
                     }
                     return arreglo;
@@ -95,7 +142,7 @@
             },
 
             created: function () {
-                axios.get(url+"/getReportes")
+                axios.get(url + "/getReportes")
                     .then(function (response) {
                         console.table(response.data);
                         app.lista = response.data;

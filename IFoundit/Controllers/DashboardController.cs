@@ -1,5 +1,6 @@
 ﻿using IFoundit.DB.Maps;
 using IFoundit.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -36,6 +37,13 @@ namespace IFoundit.Controllers
                 return user;
             }
             return null;
+        }
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
