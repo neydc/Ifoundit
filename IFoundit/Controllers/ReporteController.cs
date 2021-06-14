@@ -26,8 +26,14 @@ namespace IFoundit.Controllers
             ihostingEnvironment = _hostingEnvironment;
         }
       
-        public async Task<IActionResult> Index(string sortOrder, string query, string currentFilter, int? page)
+        public async Task<IActionResult> Index(string sortOrder, string query, string currentFilter, string perdidos, string encontrados, int? page)
         {
+            Usuario user = LoggedUser();
+            if (user != null)
+            {
+                ViewBag.Usuario = user;
+            }
+
             var num = context.Objetos.ToList();
             var contents = context.Objetos.AsQueryable();
             var usuarios = context.Usuarios.ToList();
@@ -35,8 +41,9 @@ namespace IFoundit.Controllers
 
             //Pagination
             ViewData["TitleSort"] = string.IsNullOrEmpty(sortOrder) ? "Nom_Desc" : "";
-            ViewData["query"] = query;
-                if (query != null)
+            ViewData["Objperdidos"] = string.IsNullOrEmpty(perdidos) ? "perdidos" : "";
+            ViewData["ObjEncontrados"] = string.IsNullOrEmpty(perdidos) ? "encontrados" : "";
+            if (query != null)
                 {
                     page = 1;
                 }
@@ -46,6 +53,8 @@ namespace IFoundit.Controllers
             }
 
                 ViewData["currentFilter"] = query;
+                ViewData["perdidos"] = query;
+                ViewData["encontrados"] = query;
 
                 if (!string.IsNullOrEmpty(query))
                 {
@@ -58,12 +67,18 @@ namespace IFoundit.Controllers
                 case "Nom_Desc":
                     contents = contents.OrderBy(s => s.Nombre);
                     break;
+                case "perdidos":
+                    contents = contents.Where(a=>a.Estado== "Perdido");
+                    break;
+                case "encontrados":
+                    contents = contents.Where(a => a.Estado == "Encontrado");
+                    break;
                 default:
                     contents = contents.OrderByDescending(s => s.FechaPublicacion);
                     break;
             }
             int pageSize = 6;
-                return View(await PaginatedList<Objeto>.CreateAsync(contents.AsNoTracking(), page ?? 1, pageSize));
+            return View(await PaginatedList<Objeto>.CreateAsync(contents.AsNoTracking(), page ?? 1, pageSize));
         }
 
         public JsonResult getReportes() {
@@ -89,9 +104,17 @@ namespace IFoundit.Controllers
         }
 
         // GET: ReporteController/Details/5
+        [HttpGet]
         public ActionResult Details(int id)
         {
-            return View();
+            var detailObject = context.Objetos.Where(a=>a.Id==id).FirstOrDefault();
+            if (detailObject == null)
+            {
+                return View("Error");
+            }
+            var usuarios = context.Usuarios.ToList();
+            ViewBag.users = usuarios;
+            return View(detailObject);
         }
 
         // GET: ReporteController/Create
@@ -99,6 +122,11 @@ namespace IFoundit.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            Usuario user = LoggedUser();
+            if (user != null)
+            {
+                ViewBag.Usuario = user;
+            }
             var categorias = context.Categorias.ToList();
             ViewBag.categorias = categorias;
             return View();

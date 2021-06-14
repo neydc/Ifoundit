@@ -9,7 +9,6 @@ C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\bin\Debug\net5.0\ref\IFound
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\bin\Debug\net5.0\IFoundit.pdb
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\bin\Debug\net5.0\IFoundit.Views.dll
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\bin\Debug\net5.0\IFoundit.Views.pdb
-C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\IFoundit.csprojAssemblyReference.cache
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\IFoundit.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\IFoundit.AssemblyInfoInputs.cache
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\IFoundit.AssemblyInfo.cs
@@ -151,3 +150,5 @@ C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\View
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Reporte\MisReportes.cshtml.g.cs
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Auth\SignUp.cshtml.g.cs
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Auth\SignIn.cshtml.g.cs
+C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\IFoundit.csprojAssemblyReference.cache
+C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Debug\net5.0\Razor\Views\Reporte\Details.cshtml.g.cs

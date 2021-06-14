@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = Model.Nombre;
+}
+<link href="~/css/gridReportes.css" rel="stylesheet" />
+<br />
+<div class="container">
+    <div class="row" style="-webkit-box-shadow: 2px 10px 10px 2px rgb(128 128 128);border-radius:8px">
+        <div class="col-lg-12 text-center">
+            <h5><strong>@Model.Nombre</strong></h5>
+            <hr />
+        </div>
+        <div class="col-lg-6">
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <img style="width:100%" src="/PostImg/@Model.Imagen" alt="Alternate Text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="product_text" style="color:#808080">
+                <h6><strong>Descripción</strong></h6>
+                <p>@Model.Descripcion</p>
+                <hr />
+                <h6><strong>Reportado como:</strong></h6>
+                <p>@Model.Estado</p>
+                <hr />
+                <h6><strong>Publicado el </strong></h6>
+                <p>@Model.FechaPublicacion.ToString("dd/MM/yy") a las @Model.FechaPublicacion.ToString("hh:mm")</p>
+                <hr />
+                <h6><strong>Información de contacto</strong></h6>
+                <ul>
+                    <li style="list-style:none">
+                        @foreach (var usuarios in ViewBag.users)
+                        {
+                            @if (usuarios.Id == Model.IdUsuario)
+                            {
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=@usuarios.Celular&text=He visto esto en IFOUNDIT"><span>Whatsapp:@usuarios.Celular</span></a>
+
+                            }
+                        }
+                    </li>
+
+                </ul>
+                <hr />
+                <h6><strong>Recompensa:</strong> <strong style="color:#ffd800">@Model.Recompensa</strong></h6>
+            </div>
+        </div>
+    </div>
+</div>

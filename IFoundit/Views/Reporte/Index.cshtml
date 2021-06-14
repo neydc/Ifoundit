@@ -20,23 +20,19 @@
                             <text><strong> Nombre A-Z</strong></text>
                         </a>
                         |
-                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["TitleSort"]"
-                           asp-route-currentFilter="@ViewData["currentFilter"]">
-                            <text><strong> Fecha públicación A-Z</strong></text>
+                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["ObjPerdidos"]"
+                           asp-route-currentFilter="@ViewData["perdidos"]">
+                            <text><strong> Perdidos </strong></text>
                         </a>
                         |
-                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["TitleSort"]"
-                           asp-route-currentFilter="@ViewData["currentFilter"]">
-                            <text><strong> Perdidos </strong></text>
-                        </a> 
-                        |
-                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["TitleSort"]"
-                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                        <a class="btn" asp-action="Index" asp-route-sortOrder="@ViewData["ObjEncontrados"]"
+                           asp-route-currentFilter="@ViewData["encontrados"]">
                             <text><strong> Encontrados </strong></text>
                         </a>
+                       
                     </div>
                 </div>
-              
+
                 <div class="col-md-4">
                     <div class="text-right">
                         <a class="button" href="/reporte/create">Crear</a>
@@ -46,41 +42,40 @@
         </div>
     </div>
     <div class="row" style="-webkit-box-shadow: 2px 10px 10px 2px rgb(128 128 128);border-radius:8px">
-            @foreach (var item in Model)
-            {
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="product_item">
-                        <div class="product_item_pic">
-                            <div class="product_item_pics">
-                                <img class="product_item_pics" src="/PostImg/@item.Imagen" alt="Alternate Text" />
-                            </div>
-                            <ul class="product__hover">
-                                <li>
-                                    @foreach (var usuarios in ViewBag.users)
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="product_item">
+                    <div class="product_item_pic">
+                        <div class="product_item_pics">
+                            <img class="product_item_pics" src="/PostImg/@item.Imagen" alt="Alternate Text" />
+                        </div>
+                        <ul class="product__hover">
+                            <li>
+                                @foreach (var usuarios in ViewBag.users)
+                                {
+                                    @if (usuarios.Id == item.IdUsuario)
                                     {
-                                        @if (usuarios.Id == item.IdUsuario)
-                                        {
-                                            <a target="_blank" href="https://api.whatsapp.com/send?phone=@usuarios.Celular&text=Hola"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
+                                        <a target="_blank" href="https://api.whatsapp.com/send?phone=@usuarios.Celular&text=He visto esto en IFOUNDIT"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
 
-                                        }
                                     }
-                                </li>
+                                }
+                            </li>
 
-                            </ul>
-                        </div>
-                        <div class="product_text" style="color:#808080">
-                            <h6><strong>@item.Nombre</strong></h6>
-                            @*<p>@item.Descripcion.substr(0, 50);</p>*@
-                            <p>@item.Descripcion</p>
-                            <p><strong>Recompensa: @item.Recompensa</strong></p>
-                        </div>
+                        </ul>
+                    </div>
+                    <div class="product_text" style="color:#808080">
+                        <h6><strong><a href ="/reporte/details?id=@item.Id">@item.Nombre</a></strong></h6>
+                        <p>@item.Descripcion.Substring(0,75)...</p>
+                        <p><strong>Recompensa: @item.Recompensa | @item.FechaPublicacion.ToString("dd/MM/yy")</strong></p>
+                        <p><strong></strong></p>
                     </div>
                 </div>
-            }
-        </div>
+            </div>
+        }
     </div>
-<div class="col-lg-12">
-    <div class="">
+    <div class="text-right">
+        <br />
         @{
             var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
             var nextDisabled = !Model.HasNextPage ? "disabled" : "";
@@ -97,22 +92,25 @@
            asp-route-sortOrder="@ViewData["CurrentSort"]"
            asp-route-page="@(Model.PageIndex + 1)"
            asp-route-currentFilter="@ViewData["currentFilter"]"
-           class="btn  @nextDisabled">
+           class="btn @nextDisabled">
             Siguiente
         </a>
     </div>
+</div>
+<!--<div class="col-lg-12">
+   
     <div id="root">
         <h1>{{mensaje}}</h1>
         <div>
             <input class="form-control" type="text" v-model="txtbuscar" placeholder="buscar" />
-            <ul>
+            <ul>-->
                 @*<li v-for="item in lista">{{item.nombre}}</li>*@
-                <li v-for="item in listaFiltrada">{{item.nombre}}</li>
+                <!--<li v-for="item in listaFiltrada">{{item.nombre}}</li>
             </ul>
         </div>
     </div>
-</div>
-@section scripts{
+</div>-->
+@*@section scripts{
     <script>
         var url = '@Url.RouteUrl("Default")';
     </script>
@@ -153,4 +151,4 @@
             }
         })
     </script>
-}
+}*@

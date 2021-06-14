@@ -9,6 +9,7 @@
 .product_item:hover {
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     border: initial;
+    
 }
 .product_item_pic {
     height: 260px;
@@ -28,6 +29,7 @@
         height: 260px;
         width: 100%;
         object-fit: cover;
+        transform: scale(1.05);
         position: relative;
         background-position: center center;
     }
@@ -36,7 +38,7 @@
     background: #ffffff;
 }
     h6 {
-        color: #ff3535;
+        color: #666;
         font-size: 15px;
         font-weight: 600;
         margin-bottom: 5px;
