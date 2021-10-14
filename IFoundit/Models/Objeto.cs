@@ -15,6 +15,9 @@ namespace IFoundit.Models
         public string Imagen { get; set; }
         public string Categoria { get; set; }
         public string Estado { get; set; }
+        public string WhatsappDeUsuario { get; set; }
+        public string OtroNumero { get; set; }
+        public Boolean EstadoWhatsapp { get; set; }
         public int IdUsuario { get; set; }
 
         public Usuario Usuario{ get; set; }

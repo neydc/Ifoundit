@@ -25,8 +25,14 @@ namespace IFoundit.Controllers
             if (user != null)
             {
                 ViewBag.Usuario = user;
+                var misreportes = context.Objetos.Where(a => a.IdUsuario == user.Id).ToList();
+                ViewBag.misreportes = misreportes.Count;
+                return View(misreportes.OrderByDescending(a => a.FechaPublicacion));
             }
-            return View();
+            else
+            {
+                return View("", "login");
+            }
         }
         private Usuario LoggedUser()
         {

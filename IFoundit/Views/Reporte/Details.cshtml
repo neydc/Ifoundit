@@ -37,8 +37,14 @@
                         {
                             @if (usuarios.Id == Model.IdUsuario)
                             {
-                                <a target="_blank" href="https://api.whatsapp.com/send?phone=@usuarios.Celular&text=He visto esto en IFOUNDIT"><span>Whatsapp:@usuarios.Celular</span></a>
-
+                                @if (Model.EstadoWhatsapp == true)
+                                {
+                                    <a target="_blank" href="https://api.whatsapp.com/send?phone=@Model.WhatsappDeUsuario&text=He visto esto en IFOUNDIT"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
+                                }
+                                else
+                                {
+                                    <a target="_blank" href="tel:@Model.OtroNumero"> <img style="width:35px" src="/Images/telefono.png" alt=""><span>Contacto: @Model.OtroNumero</span></a>
+                                }
                             }
                         }
                     </li>

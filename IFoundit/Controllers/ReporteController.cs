@@ -85,8 +85,31 @@ namespace IFoundit.Controllers
             var objectos = context.Objetos.ToList();
             return Json(objectos);
         }
-
         [Authorize]
+        [HttpGet]
+        public ActionResult Change(int id)
+        {
+            Usuario user = LoggedUser();
+            if (user != null)
+            {
+                var obtenerObjeto = context.Objetos.Where(a => a.Id == id).FirstOrDefault();
+                if (obtenerObjeto!=null)
+                {
+                    if (obtenerObjeto.Estado == "Perdido")
+                    {
+                        obtenerObjeto.Estado = "Encontrado";
+                        context.SaveChanges();
+                    }
+                    else 
+                    {
+                        obtenerObjeto.Estado = "Perdido";
+                        context.SaveChanges();
+                    }
+                }
+            }
+            return RedirectToAction("","dashboard");
+        }
+            [Authorize]
         [HttpGet]
         public ActionResult MisReportes()
         {
@@ -107,10 +130,13 @@ namespace IFoundit.Controllers
         [HttpGet]
         public ActionResult Details(int id)
         {
+            Usuario user = LoggedUser();
+            ViewBag.Usuario = user;
+           
             var detailObject = context.Objetos.Where(a=>a.Id==id).FirstOrDefault();
             if (detailObject == null)
             {
-                return View("Error");
+                return RedirectToAction("Error","Home");
             }
             var usuarios = context.Usuarios.ToList();
             ViewBag.users = usuarios;
@@ -126,34 +152,80 @@ namespace IFoundit.Controllers
             if (user != null)
             {
                 ViewBag.Usuario = user;
+                ViewBag.celular = user.Celular;
+                ViewBag.correo = user.Correo;
+                ViewBag.tieneWhatsapp = user.TieneWhatsapp;
             }
             var categorias = context.Categorias.ToList();
             ViewBag.categorias = categorias;
-            return View();
+            return View( new Objeto());
         }
 
         // POST: ReporteController/Create
         [HttpPost]
         [Obsolete]
-        public ActionResult Create(Objeto objeto, IFormFile photos)
+        [Authorize]
+        public ActionResult Create(Objeto objeto, IFormFile photos,string miWhatsapp,string otroNumero, string nuevoCelular)
         {
             validar(objeto);
-                if (ModelState.IsValid)
+            validarImagen(photos);
+            Usuario user = LoggedUser();
+            if (user != null)
+            {
+                ViewBag.Usuario = user;
+                ViewBag.celular = user.Celular;
+                ViewBag.correo = user.Correo;
+                ViewBag.tieneWhatsapp = user.TieneWhatsapp;
+            }
+            if (miWhatsapp != null)
+            {
+                objeto.WhatsappDeUsuario =user.Celular;
+                objeto.EstadoWhatsapp = true;
+            }
+           
+            if (otroNumero == null && miWhatsapp == null)
+            {
+                ModelState.AddModelError("erroreligaUno", "Eliga entre el número de su perfil o precise otro número ");
+            }
+            if (otroNumero!=null)
+            {
+                if (nuevoCelular.Length==9)
                 {
+                    objeto.OtroNumero = nuevoCelular;
+                    objeto.EstadoWhatsapp = false;
+                }
+                else
+                {
+                    ModelState.AddModelError("errorNumNoAdmin","Ingrese número de 9 digitos");
+                }
+            }
+            if (ModelState.IsValid)
+                {
+
                     var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "PostImg", photos.FileName);
                     var stream = new FileStream(path, FileMode.Create);
                     photos.CopyToAsync(stream);
                     objeto.FechaPublicacion = DateTime.Now;
                     objeto.Imagen = photos.FileName;
-
+                    objeto.IdUsuario = user.Id;
                     context.Add(objeto);
                     context.SaveChanges();
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    return View();
+                var categorias = context.Categorias.ToList();
+                ViewBag.categorias = categorias;
+                return View(objeto);
                 }
+        }
+
+        private void validarImagen(IFormFile photos)
+        {
+            if (photos==null)
+            {
+                ModelState.AddModelError("ImageNull","Por favor ingrese una imagen");
+            }
         }
 
         private void validar(Objeto objeto)
@@ -164,15 +236,26 @@ namespace IFoundit.Controllers
             } 
             if (objeto.Recompensa==null)
             {
-                ModelState.AddModelError("Nombre","Ingrese una recompensa");
+                ModelState.AddModelError("Recompensa","Ingrese una recompensa");
             }
             if (objeto.Categoria==null)
             {
-                ModelState.AddModelError("Nombre","Campo nombre requerido");
+                ModelState.AddModelError("Categoria", "Campo Categoria requerido");
+            }
+            if (objeto.Estado == null)
+            {
+                ModelState.AddModelError("Estado", "Campo Categoria requerido");
             }
             if (objeto.Descripcion==null)
             {
-                ModelState.AddModelError("Nombre","Campo nombre requerido");
+                ModelState.AddModelError("Descripcion", "Campo Descripcion requerido");
+            }
+            if (objeto.Descripcion!=null)
+            {
+                if (objeto.Descripcion.Length < 75)
+                {
+                    ModelState.AddModelError("DescripcionCaracteres", "Se requiere mínimo 75 caracteres");
+                }
             }
         }
 

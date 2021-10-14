@@ -27,6 +27,7 @@ namespace IFoundit.Controllers
             if (user!=null)
             {
                 ViewBag.Usuario = user;
+                return RedirectToAction("", "dashboard");
             }
             
             return View();

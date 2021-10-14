@@ -56,16 +56,22 @@
                                 {
                                     @if (usuarios.Id == item.IdUsuario)
                                     {
-                                        <a target="_blank" href="https://api.whatsapp.com/send?phone=@usuarios.Celular&text=He visto esto en IFOUNDIT"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
 
+                                        @if (item.EstadoWhatsapp == true)
+                                        {
+                                            <a target="_blank" href="https://api.whatsapp.com/send?phone=@item.WhatsappDeUsuario&text=He visto esto en IFOUNDIT"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
+                                        }
+                                        else
+                                        {
+                                            <a target="_blank" href="tel:@usuarios.CelularContacto"> <img style="width:35px" src="/Images/telefono.png" alt=""><span>Contacto: @item.OtroNumero</span></a>
+                                        }
                                     }
                                 }
                             </li>
-
                         </ul>
                     </div>
                     <div class="product_text" style="color:#808080">
-                        <h6><strong><a href ="/reporte/details?id=@item.Id">@item.Nombre</a></strong></h6>
+                        <h6><strong><a style="color:#000000" href ="/reporte/details?id=@item.Id">@item.Nombre</a></strong></h6>
                         <p>@item.Descripcion.Substring(0,75)...</p>
                         <p><strong>Recompensa: @item.Recompensa | @item.FechaPublicacion.ToString("dd/MM/yy")</strong></p>
                         <p><strong></strong></p>

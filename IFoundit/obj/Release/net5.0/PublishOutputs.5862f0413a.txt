@@ -22,6 +22,7 @@ C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\O
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\logoWh.png
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\portafoliodocumentos.jpg
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\recortada.png
+C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\telefono.png
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\js\site.js
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -62,6 +63,7 @@ C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\O
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\billetera.png
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\billeteradama.jpg
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\billeteramujer.jpg
+C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Captura.PNG
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\certificado.jpg
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\descarga.jpg
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\dni.jfif
@@ -76,7 +78,6 @@ C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\O
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\llaves.png
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\llavescarro.jpg
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\portafoliodocumentos.jpg
-C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Puede Ser.png
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\appsettings.json
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\IFoundit.dll

@@ -27,13 +27,18 @@
                     <p style="font-size:11px;color:#808080">@Html.ValidationMessage("ApellidoSoloLetras")</p>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <input value="@Model.Dni" type="text" class="fadeIn second" name="Dni" placeholder="DNI" autocomplete="off">
-                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("DNI")</p>
-                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("DNINumeros")</p>
-                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("DNIDuplex")</p>
+                    <input value="@Model.Correo" type="text" class="fadeIn second" name="Correo" placeholder="Correo" autocomplete="off">
+                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo")</p>
+                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("CorreoDuplex")</p>
+                    
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <h6 style="color:#808080 "class="fadeIn second">Sexo</h6>
+                    <input value="@Model.Contrasenia" type="password" class="fadeIn third" name="Contrasenia" placeholder="Contraseña" autocomplete="off">
+                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Contrasenia")</p>
+                   
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <h6 style="color:#808080 " class="fadeIn second">Sexo</h6>
                     <div style="display:inline; color:#808080">
                         <input style="display:inline" class="fadeIn second" type="radio" value="M" name="Sexo">
                         <p style="display:inline" class="fadeIn second">Masculino</p>
@@ -45,20 +50,21 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <input value="@Model.Correo" type="text" class="fadeIn second" name="Correo" placeholder="Correo" autocomplete="off">
-                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo")</p>
-                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("CorreoDuplex")</p>
+                    <input value="@Model.Celular" type="text" class="fadeIn third" name="Celular" placeholder="Celular" autocomplete="off">
+                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Celular")</p>
+                    <div style="display:inline; color:#808080">
+                        <input style="display:inline" type="radio" value="1" name="TieneWhatsapp">
+                        <p style="display:inline">Es whatsapp</p>
+                        <input style="display:inline" type="radio" value="0" name="TieneWhatsapp">
+                        <p style="display:inline">No es whatsapp</p>
+                    </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="col-md-12 col-md-12">
+                        <input type="submit" class="fadeIn fourth" value="Registrarse">
+                    </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <input value="@Model.Contrasenia" type="password" class="fadeIn third" name="Contrasenia" placeholder="Contraseña" autocomplete="off">
-                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Contrasenia")</p>
-                </div>
-                <br />
-                <br />
-                <div class="col-md-12 col-md-12">
-                    <input type="submit" class="fadeIn fourth" value="Registrarse">
-                </div>
-            </div>
         </form>
 
         <!-- Remind Passowrd -->

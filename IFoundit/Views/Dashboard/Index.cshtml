@@ -1,5 +1,67 @@
-﻿
-
+﻿<style>
+    th {
+        color: #fff;
+    }
+</style>
 <div class="container">
-    <h1>Dashboard</h1>
+    @if (ViewBag.misreportes ==0)
+    {
+    <div class="col-md-12">
+        <div class="col-md-12 text-right">
+            <h5 style="color:#656363">Hola, @ViewBag.Usuario.Nombre @ViewBag.Usuario.Apellidos <br /></h5>
+        </div>
+        <div class="col-md-12 text-center">
+            <br />
+            <br /><br />
+            <h2 style="color:#808080"> Usted no tiene ningún reporte</h2>
+            <br />
+            <br />
+
+            <br />
+            <br />
+          
+        </div>
+        <div class="col-md-12 text-center">
+            <a class="btn btn-warning" href="/reporte/create">¡Encontré algo!</a>
+            <a class="btn btn-warning" href="/reporte/create">!Estoy buscando algo!</a>
+        </div>
+    </div>
+    }
+    @if(ViewBag.misreportes>0)
+    {
+        <br />
+        <div class="col-lg-12 text-right">
+            Hola, @ViewBag.Usuario.Nombre @ViewBag.Usuario.Apellidos
+        </div>
+        <h3 class="pb-3 mb-4 font-italic border-bottom">
+             Mis reportes
+        </h3>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6">
+                    <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            @*<strong class="d-inline-block mb-2 text-primary">@item.Categoria</strong>*@
+                            <h6 class="mb-0">
+                                <a class="text-dark" href="#">@item.Nombre</a>
+                            </h6>
+                            <div class="mb-1 text-muted small">@item.FechaPublicacion</div>
+                            <p class="card-text mb-auto">@item.Descripcion.Substring(0, 85)...</p>
+                            @if (item.Estado == "Perdido")
+                            {
+                                <a class="btn btn-outline-warning btn-sm" role="button" href="/Reporte/Change?id=@item.Id">Perdido</a>
+                            }
+                            @if (item.Estado == "Encontrado")
+                            {
+                                <a class="btn btn-outline-warning btn-sm" role="button" href="/reporte/Change?id=@item.Id">Encontrado</a>
+                            }
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="/PostImg/@item.Imagen" style="width: 200px;object-fit:cover">
+                    </div>
+                </div>
+            }
+        </div>
+
+    }
 </div>

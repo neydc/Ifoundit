@@ -40,20 +40,13 @@ namespace IFoundit.Controllers
             {
                 ModelState.AddModelError("Nombre","Ingrese su nombre");
             }
-            if (string.IsNullOrEmpty(usuario.Dni))
-            {
-                ModelState.AddModelError("DNI","Ingrese su número de DNI");
-            }
+           
             if (string.IsNullOrEmpty(usuario.Contrasenia))
             {
                 ModelState.AddModelError("Contrasenia","Ingrese su contraseña");
             } 
 
-            if (usuario.Dni!=null|| usuario.Dni!="")
-            {
-                var searchUser = _context.Usuarios.Where(a=>a.Dni==usuario.Dni).FirstOrDefault();
-                ModelState.AddModelError("DNIDuplex", "Este número de DNI ya está registrado");
-            }
+           
             if (!validarLetras(usuario.Nombre))
             {
                 ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
@@ -62,10 +55,7 @@ namespace IFoundit.Controllers
             {
                 ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
             }
-            if (!validarnUMEROS(usuario.Dni))
-            {
-                ModelState.AddModelError("DNINumeros", "Ingrese caracteres numéricos");
-            }
+           
         }
         public bool validarnUMEROS(string numString)
         {

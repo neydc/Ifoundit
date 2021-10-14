@@ -101,14 +101,15 @@ namespace IFoundit.Controllers
             {
                 ModelState.AddModelError("Nombre", "Ingrese su nombre");
             }
-            if (string.IsNullOrEmpty(usuario.Dni))
-            {
-                ModelState.AddModelError("DNI", "Ingrese su número de DNI");
-            }  
+           
             if (usuario.Sexo==0)
             {
-                ModelState.AddModelError("Sexo", "Ingrese su Género");
-            } 
+                ModelState.AddModelError("Sexo", "Ingrese su género");
+            }
+            if (string.IsNullOrEmpty(usuario.Celular))
+            {
+                ModelState.AddModelError("Celular", "Ingrese su número celular");
+            }
             if (string.IsNullOrEmpty(usuario.Correo))
             {
                 ModelState.AddModelError("Correo", "Ingrese su correo electrónico");
@@ -118,14 +119,6 @@ namespace IFoundit.Controllers
                 ModelState.AddModelError("Contrasenia", "Ingrese su contraseña");
             }
 
-            if (usuario.Dni != null )
-            {
-                var searchUser = context.Usuarios.Where(a => a.Dni == usuario.Dni).FirstOrDefault();
-                if (searchUser!=null)
-                {
-                    ModelState.AddModelError("DNIDuplex", "Este número de DNI ya está registrado");
-                }
-            } 
             if (usuario.Correo != null)
             {
                 var searchCorreo = context.Usuarios.Where(a => a.Correo == usuario.Correo).FirstOrDefault();
@@ -153,13 +146,6 @@ namespace IFoundit.Controllers
                 if (!validarLetras(usuario.Apellidos))
                 {
                     ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
-                }
-            }
-            if (usuario.Dni!=null)
-            {
-                if (!validarnUMEROS(usuario.Dni))
-                {
-                    ModelState.AddModelError("DNINumeros", "Ingrese caracteres numéricos");
                 }
             }
         }

@@ -151,3 +151,4 @@ C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\IFoundit
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\ref\IFoundit.dll
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\IFoundit.pdb
 C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\IFoundit.genruntimeconfig.cache
+C:\Users\Neiser Díaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Reporte\Details.cshtml.g.cs
