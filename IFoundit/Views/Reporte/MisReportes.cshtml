@@ -23,13 +23,13 @@
                 <div class="col-md-6">
                     <div class="card flex-md-row mb-4 shadow-sm h-md-250">
                         <div class="card-body d-flex flex-column align-items-start">
-                            <strong class="d-inline-block mb-2 text-primary">@item.Categoria</strong>
+                            <strong class="d-inline-block mb-2 " style="">@item.Categoria</strong>
                             <h6 class="mb-0">
-                                <a class="text-dark" href="#">@item.Nombre</a>
+                                <a title="asd" class="text-dark" href="/reporte/editar?id=@item.Id">@item.Nombre</a>
                             </h6>
                             <div class="mb-1 text-muted small">@item.FechaPublicacion</div>
                             <p class="card-text mb-auto">@item.Descripcion.Substring(0, 85)...</p>
-                            <a class="btn btn-outline-primary btn-sm" role="button" href="#">@item.Estado</a>
+                            <a class="btn btn-outline-warning btn-sm" role="button" href="#">@item.Estado</a>
                         </div>
                         <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="/PostImg/@item.Imagen" style="width: 200px;object-fit:cover">
                     </div>

@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewData["Title"] = "Editar";
+}
+<link href="~/css/gridReportes.css" rel="stylesheet" />
+<br />
+<div class="container shadow-lg" style=" -webkit-box-shadow: 5px 30px 30px 5px rgb(128 128 128);border-radius:8px">
+    <div class="container">
+        <form action="/reporte/editar" method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <span>Nombre</span>
+                        <input class="form-control" type="text" name="Nombre" value="@Model.Nombre" placeholder="Mochila Verde" />
+                        <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Nombre")</p>
+                    </div>
+                    <div>
+                        <span>Categoría</span>
+                        <select class="form-control" name="Categoria">
+                            @foreach (var item in ViewBag.categorias)
+                            {
+                                @if (item.Nombre == Model.Categoria)
+                                {
+                                    <option value="@item.Nombre" selected="selected">@item.Nombre</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.Nombre">@item.Nombre</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <span>Descripción</span>
+                        <textarea name="Descripcion" class="form-control">@Model.Descripcion</textarea>
+                        <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Descripcion")</p>
+                        <p style="font-size:11px;color:#808080">@Html.ValidationMessage("DescripcionCaracteres")</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <div>
+                            <span>Recompensa</span>
+                            <input class="form-control" type="text" name="Recompensa" value="@Model.Recompensa" />
+                            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Recompensa")</p>
+                        </div>
+                        <div>
+                            <span>Estado</span>
+                            <select class="form-control" name="Estado">
+                                <option selected="@Model.Estado=="Perdido" ?"selected":""" value="Perdido">Perdido</option>
+                                <option selected="@Model.Estado=="Encontrado ?"selected":""" value="Encontrado">Encontrado</option>
+                                
+                            </select>
+                            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Estado")</p>
+                        </div>
+                        <span>Imagen</span>
+                        <div>
+                            <img style="width:29%" src="~/PostImg/@Model.Imagen"/>
+                        </div>
+                        <input class="form-control-file" type="file" value="@Model.Imagen" name="photos" />
+                        <p style="font-size:11px;color:#808080">@Html.ValidationMessage("ImageNull")</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="text-center">
+                        <h6 style="color:#808080 "></h6>
+                        <div style="display:inline; color:#808080">
+                            @*@ViewBag.tieneWhatsapp*@
+                            @if (ViewBag.tieneWhatsapp == 1)
+                            {
+                                <input style="display:inline" type="checkbox" value="1" name="miWhatsapp">
+                                <p style="display:inline">Usar el número de whatsapp de mi perfil para que los interesados me contacten </p>
+
+                            }
+                            else
+                            {
+                                <br />
+                                <input style="display:inline" type="checkbox" name="miCorreo">
+                                <p style="display:inline">Usar mi correo como contacto</p>
+                            }
+                            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("erroreligaUno")</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    @if (ViewBag.tieneWhatsapp == 0)
+                    {
+                        <fieldset>
+                            <input style="display:inline" type="checkbox" name="otroNumero">
+                            <p style="display:inline">Número de contacto</p>
+
+                            <input name="nuevoCelular" />
+                            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("errorNumNoAdmin")</p>
+                        </fieldset>
+                    }
+                </div>
+                <hr />
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <button class="button">Crear</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <a style="color:#808080" href="/reporte/">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

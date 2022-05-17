@@ -71,10 +71,12 @@
                         </ul>
                     </div>
                     <div class="product_text" style="color:#808080">
-                        <h6><strong><a style="color:#000000" href ="/reporte/details?id=@item.Id">@item.Nombre</a></strong></h6>
-                        <p>@item.Descripcion.Substring(0,75)...</p>
-                        <p><strong>Recompensa: @item.Recompensa | @item.FechaPublicacion.ToString("dd/MM/yy")</strong></p>
-                        <p><strong></strong></p>
+                        <h6><strong><a style="color:#000000" href="/reporte/details?id=@item.Id">@item.Nombre</a></strong></h6>
+                        <p>@item.Descripcion.Substring(0, 75)...</p>
+                        @if (item.Recompensa.Length > 7)
+                        {
+                            <p><strong>Recompensa: @item.Recompensa.Substring(0, 8)... | @item.FechaPublicacion.ToString("dd/MM/yy")</strong></p>
+                        }
                     </div>
                 </div>
             </div>

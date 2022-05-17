@@ -34,8 +34,8 @@ namespace IFoundit.Controllers
                 ViewBag.Usuario = user;
             }
 
-            var num = context.Objetos.ToList();
-            var contents = context.Objetos.AsQueryable();
+           // var num = context.Objetos.ToList();
+            var contents = context.Objetos.Where(a => a.Ocultar == 1).AsQueryable();
             var usuarios = context.Usuarios.ToList();
             ViewBag.users = usuarios;
 
@@ -98,11 +98,13 @@ namespace IFoundit.Controllers
                     if (obtenerObjeto.Estado == "Perdido")
                     {
                         obtenerObjeto.Estado = "Encontrado";
+                        obtenerObjeto.Ocultar =0;
                         context.SaveChanges();
                     }
                     else 
                     {
                         obtenerObjeto.Estado = "Perdido";
+                        obtenerObjeto.Ocultar = 0;
                         context.SaveChanges();
                     }
                 }
@@ -165,7 +167,7 @@ namespace IFoundit.Controllers
         [HttpPost]
         [Obsolete]
         [Authorize]
-        public ActionResult Create(Objeto objeto, IFormFile photos,string miWhatsapp,string otroNumero, string nuevoCelular)
+        public ActionResult Create(Objeto objeto, IFormFile photos, string miWhatsapp, string otroNumero, string nuevoCelular)
         {
             validar(objeto);
             validarImagen(photos);
@@ -179,45 +181,46 @@ namespace IFoundit.Controllers
             }
             if (miWhatsapp != null)
             {
-                objeto.WhatsappDeUsuario =user.Celular;
+                objeto.WhatsappDeUsuario = user.Celular;
                 objeto.EstadoWhatsapp = true;
             }
-           
+
             if (otroNumero == null && miWhatsapp == null)
             {
                 ModelState.AddModelError("erroreligaUno", "Eliga entre el número de su perfil o precise otro número ");
             }
-            if (otroNumero!=null)
+            if (otroNumero != null)
             {
-                if (nuevoCelular.Length==9)
+                if (nuevoCelular.Length == 9)
                 {
                     objeto.OtroNumero = nuevoCelular;
                     objeto.EstadoWhatsapp = false;
                 }
                 else
                 {
-                    ModelState.AddModelError("errorNumNoAdmin","Ingrese número de 9 digitos");
+                    ModelState.AddModelError("errorNumNoAdmin", "Ingrese número de 9 digitos");
                 }
             }
             if (ModelState.IsValid)
-                {
+            {
 
-                    var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "PostImg", photos.FileName);
-                    var stream = new FileStream(path, FileMode.Create);
-                    photos.CopyToAsync(stream);
-                    objeto.FechaPublicacion = DateTime.Now;
-                    objeto.Imagen = photos.FileName;
-                    objeto.IdUsuario = user.Id;
-                    context.Add(objeto);
-                    context.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-                else
-                {
+                var path = Path.Combine(this.ihostingEnvironment.WebRootPath, "PostImg", photos.FileName);
+                var stream = new FileStream(path, FileMode.Create);
+                photos.CopyToAsync(stream);
+                objeto.FechaPublicacion = DateTime.Now;
+                objeto.Imagen = photos.FileName;
+                objeto.IdUsuario = user.Id;
+                context.Add(objeto);
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
                 var categorias = context.Categorias.ToList();
                 ViewBag.categorias = categorias;
                 return View(objeto);
-                }
+            }
+
         }
 
         private void validarImagen(IFormFile photos)
@@ -260,15 +263,18 @@ namespace IFoundit.Controllers
         }
 
         // GET: ReporteController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Editar(int id)
         {
-            return View();
+            var objeto = context.Objetos.Where(a=>a.Id==id).FirstOrDefault();
+            var categorias = context.Categorias.ToList();
+            ViewBag.categorias = categorias;
+            return View(objeto);
         }
 
         // POST: ReporteController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Editar(int id, IFormCollection collection)
         {
             try
             {

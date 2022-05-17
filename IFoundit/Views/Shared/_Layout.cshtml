@@ -30,7 +30,7 @@
                             <a class="nav-link" href="/"><i class="fa fa-home fa-fw mr-1"></i>Inicio</a>
                         </li>
                         <li class="nav-item pl-1">
-                            <a class="nav-link" href="#"><i class="fa fa-info-circle fa-fw mr-1"></i>Nosotros</a>
+                            <a class="nav-link" href="/nosotros"><i class="fa fa-info-circle fa-fw mr-1"></i>Nosotros</a>
                         </li>
                         @*<li class="nav-item active pl-1">
                                 <a class="nav-link" href="#"><i class="fa fa-th-list fa-fw mr-1"></i>Nosotros</a>
@@ -39,14 +39,14 @@
                             <a class="nav-link" href="/reporte"><i class="fa fa-user fa-fw"></i>Reportes</a>
                         </li>
                         <li class="nav-item pl-1">
-                            <a class="nav-link" href="#"><i class="fa fa-phone fa-fw mr-1"></i>Contacto</a>
+                            <a class="nav-link" href="/contacto"><i class="fa fa-phone fa-fw mr-1"></i>Contacto</a>
                         </li>
                         <li>
                             <div class="dropdown">
                                 <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   @if (ViewBag.Usuario!=null)
                                   {
-                                    <text>Bienvenido(a), @ViewBag.Usuario.Nombre</text>
+                                    @ViewBag.Usuario.Nombre
                                   }
                                   else
                                   {
@@ -111,7 +111,7 @@
                                 <a class="text-light d-block lead" style="margin-left: -20px" href="#">
                                     <i class="fa fa-phone mr-2"></i>+51 968 362 425
                                 </a>
-                                <a class="text-light d-block lead" href="#">
+                                <a class="text-light d-block lead" href="mailto:info@ifoundit.com">
                                     <i class="fa fa-envelope mr-2"></i>info@ifoundit.com
                                 </a>
                             </div>

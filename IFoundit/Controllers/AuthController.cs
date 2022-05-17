@@ -57,7 +57,7 @@ namespace IFoundit.Controllers
 
                     HttpContext.SignInAsync(claimsPrincipal);
                     //return Json(new { dashboard = 1 });
-                    return RedirectToAction("Index", "dashboard");
+                    return RedirectToAction("misreportes", "reporte");
 
                 }
                 else

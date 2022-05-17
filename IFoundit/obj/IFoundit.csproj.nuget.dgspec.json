@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Neiser Díaz\\source\\repos\\IFoundit\\IFoundit\\IFoundit.csproj": {}
+    "C:\\Users\\ndiaz\\source\\repos\\IFoundit\\IFoundit\\IFoundit.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Neiser Díaz\\source\\repos\\IFoundit\\IFoundit\\IFoundit.csproj": {
+    "C:\\Users\\ndiaz\\source\\repos\\IFoundit\\IFoundit\\IFoundit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Neiser Díaz\\source\\repos\\IFoundit\\IFoundit\\IFoundit.csproj",
+        "projectUniqueName": "C:\\Users\\ndiaz\\source\\repos\\IFoundit\\IFoundit\\IFoundit.csproj",
         "projectName": "IFoundit",
-        "projectPath": "C:\\Users\\Neiser Díaz\\source\\repos\\IFoundit\\IFoundit\\IFoundit.csproj",
-        "packagesPath": "C:\\Users\\Neiser Díaz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Neiser Díaz\\source\\repos\\IFoundit\\IFoundit\\obj\\",
+        "projectPath": "C:\\Users\\ndiaz\\source\\repos\\IFoundit\\IFoundit\\IFoundit.csproj",
+        "packagesPath": "C:\\Users\\ndiaz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ndiaz\\source\\repos\\IFoundit\\IFoundit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Neiser Díaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ndiaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.5, )"
@@ -67,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     }

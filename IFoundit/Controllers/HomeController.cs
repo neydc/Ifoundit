@@ -19,23 +19,26 @@ namespace IFoundit.Controllers
             _logger = logger;
             this.context = context;
         }
-      
+
 
         public IActionResult Index()
         {
             Usuario user = LoggedUser();
-            if (user!=null)
+            if (user != null)
             {
                 ViewBag.Usuario = user;
-                return RedirectToAction("", "dashboard");
+                return RedirectToAction("misreportes", "reporte");
             }
-            
+            //var usuario = context.Usuarios.Where(a=>a.Correo=="admin");
+            //var usuario = context.Usuarios.ToList();
+            //ViewBag.usuario = usuario;
             return View();
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            var usuarios = context.Usuarios.ToList();
+            return View(usuarios);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

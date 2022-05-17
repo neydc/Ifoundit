@@ -49,8 +49,8 @@
                                 <option value="">--Seleccione--</option>
                                 <option value="Perdido">Perdido</option>
                                 <option value="Encontrado">Encontrado</option>
-                                <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Estado")</p>
                             </select>
+                            <p> style="font-size:11px;color:#808080">@Html.ValidationMessage("Estado")</p>
                         </div>
                         <span>Imagen</span>
                         <input class="form-control-file" type="file" name="photos" />
@@ -63,7 +63,7 @@
                     <div class="text-center">
                         <h6 style="color:#808080 "></h6>
                         <div style="display:inline; color:#808080">
-                            @ViewBag.tieneWhatsapp
+                            @*@ViewBag.tieneWhatsapp*@
                             @if (ViewBag.tieneWhatsapp == 1)
                             {
                                 <input style="display:inline" type="checkbox"  value="1" name="miWhatsapp">
@@ -74,21 +74,24 @@
                             {
                                 <br />
                                 <input style="display:inline" type="checkbox"  name="miCorreo">
-                                <p style="display:inline">Usar el correo de mi perfil para que los interesados se contacten a ese correo</p>
+                                <p style="display:inline">Usar mi correo como contacto</p>
                             }
                             <p style="font-size:11px;color:#808080">@Html.ValidationMessage("erroreligaUno")</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <fieldset>
-                        <input style="display:inline" type="checkbox" name="otroNumero">
-                        <p style="display:inline">Contacteme a otro número</p>
+                    @if (ViewBag.tieneWhatsapp == 0)
+                    {
+                        <fieldset>
+                            <input  style="display:inline" type="checkbox" name="otroNumero" >
+                            <p style="display:inline">Número de contacto</p>
 
-                        <input name="nuevoCelular" />
-                        <p style="font-size:11px;color:#808080">@Html.ValidationMessage("errorNumNoAdmin")</p> 
-                    </fieldset>
-                </div>
+                            <input name="nuevoCelular" />
+                            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("errorNumNoAdmin")</p>
+                        </fieldset>
+                    }
+                    </div>
                 <hr />
                 <div class="col-md-12">
                     <div class="text-center">
