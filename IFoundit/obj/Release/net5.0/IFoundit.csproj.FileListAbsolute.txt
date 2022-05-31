@@ -308,3 +308,6 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\IFoundit.dll
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\ref\IFoundit.dll
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\IFoundit.pdb
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\IFoundit.genruntimeconfig.cache
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Contacto\Index.cshtml.g.cs
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Nosotros\Index.cshtml.g.cs
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Reporte\Editar.cshtml.g.cs

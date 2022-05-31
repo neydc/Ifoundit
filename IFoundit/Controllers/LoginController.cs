@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace IFoundit.Controllers
@@ -67,6 +68,12 @@ namespace IFoundit.Controllers
                 {
                     ModelState.AddModelError("Incorrecto","Usuario y/o Contraseña incorrecta");
                 }
+                if (correo!=null)
+                {
+                    Regex.IsMatch(correo, @"^[_a-z0-9-]+(\.[_a-z0-9-]+)@[a-z0-9]+(\.[a-z0-9]+)(\.[a-z]{2,4})$");
+                    ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
+                }
+               
             }
             return View();
         }

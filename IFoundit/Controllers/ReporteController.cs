@@ -210,6 +210,7 @@ namespace IFoundit.Controllers
                 objeto.FechaPublicacion = DateTime.Now;
                 objeto.Imagen = photos.FileName;
                 objeto.IdUsuario = user.Id;
+                objeto.Ocultar = 1;
                 context.Add(objeto);
                 context.SaveChanges();
                 return RedirectToAction("Index");

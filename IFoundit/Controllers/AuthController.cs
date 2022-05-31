@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace IFoundit.Controllers
@@ -79,6 +80,7 @@ namespace IFoundit.Controllers
         public IActionResult SignUp(Usuario usuario)
         {
             validarDatos(usuario);
+          
             if (ModelState.IsValid)
             {
                 context.Usuarios.Add(usuario);
@@ -88,6 +90,7 @@ namespace IFoundit.Controllers
 
             return View(usuario);
         }
+
         [HttpGet]
         public IActionResult Logout()
         {
@@ -104,19 +107,33 @@ namespace IFoundit.Controllers
            
             if (usuario.Sexo==0)
             {
-                ModelState.AddModelError("Sexo", "Ingrese su género");
+                ModelState.AddModelError("Sexo", "Seleccione una opción");
             }
             if (string.IsNullOrEmpty(usuario.Celular))
             {
                 ModelState.AddModelError("Celular", "Ingrese su número celular");
             }
+
             if (string.IsNullOrEmpty(usuario.Correo))
             {
                 ModelState.AddModelError("Correo", "Ingrese su correo electrónico");
             }
+            else if (!Regex.Match(usuario.Correo, @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$").Success)
+            {
+                ModelState.AddModelError("Correo2", "Inválido | nombre@dominio.com");
+            }
+
             if (string.IsNullOrEmpty(usuario.Contrasenia))
             {
                 ModelState.AddModelError("Contrasenia", "Ingrese su contraseña");
+            }
+
+            if (usuario.Contrasenia!=null)
+            {
+                if (usuario.Contrasenia.Length<4)
+                {
+                    ModelState.AddModelError("ContraseniaMenorA4", "Mínimo 4 caracteres");
+                }
             }
 
             if (usuario.Correo != null)

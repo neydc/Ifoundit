@@ -71,6 +71,7 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwr
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\examen.PNG
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\fondo.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\fondopro.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\IMG_20201216_111407.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\laptop.jfif
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\laptop.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\llavehogar.jpg

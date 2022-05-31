@@ -29,7 +29,7 @@
                            asp-route-currentFilter="@ViewData["encontrados"]">
                             <text><strong> Encontrados </strong></text>
                         </a>
-                       
+
                     </div>
                 </div>
 
@@ -44,11 +44,14 @@
     <div class="row" style="-webkit-box-shadow: 2px 10px 10px 2px rgb(128 128 128);border-radius:8px">
         @foreach (var item in Model)
         {
+
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="product_item">
                     <div class="product_item_pic">
                         <div class="product_item_pics">
-                            <img class="product_item_pics" src="/PostImg/@item.Imagen" alt="Alternate Text" />
+                            <a href="/reporte/details?id=@item.Id">
+                                <img class="product_item_pics" src="/PostImg/@item.Imagen" alt="Alternate Text" />
+                            </a>
                         </div>
                         <ul class="product__hover">
                             <li>
@@ -71,7 +74,7 @@
                         </ul>
                     </div>
                     <div class="product_text" style="color:#808080">
-                        <h6><strong><a style="color:#000000" href="/reporte/details?id=@item.Id">@item.Nombre</a></strong></h6>
+                        <h6><strong><a style="color:#000000">@item.Nombre</a></strong></h6>
                         <p>@item.Descripcion.Substring(0, 75)...</p>
                         @if (item.Recompensa.Length > 7)
                         {
@@ -80,6 +83,7 @@
                     </div>
                 </div>
             </div>
+
         }
     </div>
     <div class="text-right">
@@ -106,57 +110,57 @@
     </div>
 </div>
 <!--<div class="col-lg-12">
-   
+
     <div id="root">
         <h1>{{mensaje}}</h1>
         <div>
             <input class="form-control" type="text" v-model="txtbuscar" placeholder="buscar" />
             <ul>-->
-                @*<li v-for="item in lista">{{item.nombre}}</li>*@
-                <!--<li v-for="item in listaFiltrada">{{item.nombre}}</li>
+@*<li v-for="item in lista">{{item.nombre}}</li>*@
+<!--<li v-for="item in listaFiltrada">{{item.nombre}}</li>
             </ul>
         </div>
     </div>
 </div>-->
 @*@section scripts{
-    <script>
-        var url = '@Url.RouteUrl("Default")';
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
-    <script>
-        var app = new Vue({
-            el: "#root",
-            data: {
-                mensaje: 'Hello World',
-                lista: [],
-                txtbuscar: ''
-            },
+        <script>
+            var url = '@Url.RouteUrl("Default")';
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+        <script>
+            var app = new Vue({
+                el: "#root",
+                data: {
+                    mensaje: 'Hello World',
+                    lista: [],
+                    txtbuscar: ''
+                },
 
-            computed: {
-                listaFiltrada: function () {
-                    var arreglo = this.lista;
-                    var query = this.txtbuscar;
+                computed: {
+                    listaFiltrada: function () {
+                        var arreglo = this.lista;
+                        var query = this.txtbuscar;
 
-                    if (query !== "") {
-                        arreglo = this.lista.filter(function (cliente) {
-                            return (cliente.nombre.toLowerCase() + " ").indexOf(query.toLowerCase()) > -1;
-                        })
+                        if (query !== "") {
+                            arreglo = this.lista.filter(function (cliente) {
+                                return (cliente.nombre.toLowerCase() + " ").indexOf(query.toLowerCase()) > -1;
+                            })
+                        }
+                        return arreglo;
                     }
-                    return arreglo;
-                }
-            },
+                },
 
-            created: function () {
-                axios.get(url + "/getReportes")
-                    .then(function (response) {
-                        console.table(response.data);
-                        app.lista = response.data;
-                    })
-                    .catch(function (error) {
-                        console.log(error)
-                    });
-            }
-        })
-    </script>
-}*@
+                created: function () {
+                    axios.get(url + "/getReportes")
+                        .then(function (response) {
+                            console.table(response.data);
+                            app.lista = response.data;
+                        })
+                        .catch(function (error) {
+                            console.log(error)
+                        });
+                }
+            })
+        </script>
+    }*@
