@@ -24,7 +24,22 @@ namespace IFoundit.Controllers
         [HttpGet]
         public IActionResult SignIn()
         {
+            Usuario user = LoggedUser();
+            if (user != null)
+            {
+                ViewBag.Usuario = user;
+            }
             return View();
+        }
+        private Usuario LoggedUser()
+        {
+            var claim = HttpContext.User.Claims.FirstOrDefault();
+            if (claim != null)
+            {
+                var user = context.Usuarios.Where(o => o.Correo == claim.Value).FirstOrDefault();
+                return user;
+            }
+            return null;
         }
 
         [HttpPost]
@@ -40,8 +55,9 @@ namespace IFoundit.Controllers
                 {
                     ModelState.AddModelError("Password", "Contraseña Requerida");
                 }
-                ViewBag.usuario = correo;
+                ViewBag.usuario2 = correo;
                 ViewBag.password = password;
+                
                 return View();
             }
             if (correo != null && password != null)
@@ -66,8 +82,9 @@ namespace IFoundit.Controllers
                     ModelState.AddModelError("Incorrecto", "Usuario y/o Contraseña incorrecta");
                 }
             }
-            ViewBag.usuario = correo;
-            ViewBag.password = password;
+            ViewBag.usuario2 = correo;
+            ViewBag.password = password; Usuario user = LoggedUser();
+           
             return View();
         }
         //Registrarse
@@ -80,7 +97,7 @@ namespace IFoundit.Controllers
         public IActionResult SignUp(Usuario usuario)
         {
             validarDatos(usuario);
-          
+
             if (ModelState.IsValid)
             {
                 context.Usuarios.Add(usuario);
@@ -104,8 +121,8 @@ namespace IFoundit.Controllers
             {
                 ModelState.AddModelError("Nombre", "Ingrese su nombre");
             }
-           
-            if (usuario.Sexo==0)
+
+            if (usuario.Sexo == 0)
             {
                 ModelState.AddModelError("Sexo", "Seleccione una opción");
             }
@@ -128,9 +145,9 @@ namespace IFoundit.Controllers
                 ModelState.AddModelError("Contrasenia", "Ingrese su contraseña");
             }
 
-            if (usuario.Contrasenia!=null)
+            if (usuario.Contrasenia != null)
             {
-                if (usuario.Contrasenia.Length<4)
+                if (usuario.Contrasenia.Length < 4)
                 {
                     ModelState.AddModelError("ContraseniaMenorA4", "Mínimo 4 caracteres");
                 }
@@ -139,28 +156,14 @@ namespace IFoundit.Controllers
             if (usuario.Correo != null)
             {
                 var searchCorreo = context.Usuarios.Where(a => a.Correo == usuario.Correo).FirstOrDefault();
-                if (searchCorreo!=null)
+                if (searchCorreo != null)
                 {
                     ModelState.AddModelError("CorreoDuplex", "Este correo ya está registrado");
                 }
             }
-            if (usuario.Nombre!=null)
+            if (usuario.Nombre != null)
             {
                 if (!validarLetras(usuario.Nombre))
-                {
-                    ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
-                }
-            }
-            if (usuario.Apellidos!=null)
-            {
-                if (!validarLetras(usuario.Apellidos))
-                {
-                    ModelState.AddModelError("ApellidoSoloLetras", "No se permiten números");
-                }
-            }
-            if (usuario.Apellidos!=null)
-            {
-                if (!validarLetras(usuario.Apellidos))
                 {
                     ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
                 }

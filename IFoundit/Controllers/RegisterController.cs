@@ -29,9 +29,10 @@ namespace IFoundit.Controllers
             {
                 _context.Usuarios.Add(usuario);
                 _context.SaveChanges();
-                return RedirectToAction("","login");
+                return RedirectToAction("", "login");
             }
             return View(usuario);
+
         }
 
         private void validarDatos(Usuario usuario)
@@ -48,10 +49,6 @@ namespace IFoundit.Controllers
 
            
             if (!validarLetras(usuario.Nombre))
-            {
-                ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
-            }
-            if (!validarLetras(usuario.Apellidos))
             {
                 ModelState.AddModelError("NombreSoloLetras", "No se permiten números");
             }

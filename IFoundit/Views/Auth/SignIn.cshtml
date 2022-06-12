@@ -18,7 +18,7 @@
         <!-- Login Form -->
         <form action="/auth/signin" method="post">
             <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Incorrecto")</p>
-            <input type="text" id="login" class="fadeIn second" name="correo" placeholder="Correo*" value="@ViewBag.usuario">
+            <input type="text" id="login" class="fadeIn second" name="correo" placeholder="Correo*" value="@ViewBag.usuario2">
             <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo")</p>
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña*" value="@ViewBag.password">
             <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Password")</p>

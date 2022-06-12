@@ -7,20 +7,12 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwr
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\css\site.css
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\favicon.ico
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\Background.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\billetera.jfif
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\billeteradama.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\billeteramujer.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\certificado.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\dni.jfif
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\fondo.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\fondopro.png
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\laptop.jfif
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\llavehogar.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\llaves.jfif
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\llavescarro.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\Logo.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\logoWh.png
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\portafoliodocumentos.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\recortada.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\telefono.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\js\site.js
@@ -57,28 +49,80 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwr
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\jquery\dist\jquery.min.js
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\jquery\dist\jquery.min.map
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\jquery\LICENSE.txt
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\1.png
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\2.PNG
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\billetera.jfif
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\0-casacas-para-empresas-en-gamarra-01.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\0d4245e5b447535da377b12de3413daf-product.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\0fdcf210cb1eec99748f4ae363949b5c.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\1 Bicicleta Aro 26 doble suspensión Goliat.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\10432107_10153218801677230_7817805755048280539_n.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\12400874_557701381057896_477035074637791533_n.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\1366_2000.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\1611773170NX.HSHAA.003-1.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\1632524115_05a5a9347f8c6955946f92201d6b2c53.197368.jpeg.crdownload
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\2 283787524_5159759220786587_524765386799830556_n.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\3 285645437_5250165901696867_8115018509618013935_n.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\4 keys1.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\450_1000.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\5 Llaves de carro How-To-Find-Lost-Car-Keys1.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\7.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\8.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\84030622_209664770218206_8716383183723036672_n.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\840_560.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\a.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Acer_Aspire_7_A715_74G_Ansicht7.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\acer_laptop_2012_model_1526440647_7ff8e887.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\airpods-mano-escritorio_11037.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Analisis-MacBook-12-Globb-Labs-03.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\billetera.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\billeteradama.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\billeteramujer.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Captura.PNG
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\certificado.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\C sombrero cajamarca.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\carnero.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\CELU098SPACEGRAY-256GB_1.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\celular-xiamomi-redmi-9-pro.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\como_conectar_un_raton_inalambrico_6880_orig.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\descarga (1).jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\descarga (2).jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\descarga (3).jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\descarga (4).jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\descarga (5).jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\descarga.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\dni.jfif
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\dni.png
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\examen.PNG
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\D_NQ_NP_621507-MPE49144429529_022022-V.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\D_NQ_NP_677110-MLM28703252143_112018-O.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\D_NQ_NP_907910-MLV48385313262_112021-V.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\D_NQ_NP_931397-MPE44585618999_012021-V.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\D_NQ_NP_979180-MPE44244431914_122020-V.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\fondo.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\fondopro.png
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\IMG_20201216_111407.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\laptop.jfif
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\fotonoticia_20210320112935_1200.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Funda-De-La-Casa-De-Papel-para-m-vil-carcasa-De-Tpu-para-Samsung-Galaxy-A71.jpg_640x640.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\FV3L7MLP4ZCHJESTHLO3HUA7CQ.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\images (1).jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\images (2).jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\images (3).jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\images.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\ina.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\iphone11-select-2019-family_GEO_EMEA.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\iphone12.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\iPhone12_MC_04.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\JRDWGQLOU7ZJCFE161315656712.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\laptop.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\lenovo.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\lenovo2.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\llavehogar.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\llaves.jfif
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\llaves-vivienda-300x199.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\llaves.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\llavescarro.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Macbook02_bruno_decompras-300x300.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\maxresdefault (1).jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\maxresdefault.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\mochila-perdida-en-el-banco-la-mujer-perdió-su-un-de-madera-195644484.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\motog.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\portafoliodocumentos.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\rBVaHFZQFZCAFNTDAAHZEZR2mps627.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Sansung.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\smartphones-peru-iphone-xr-128gb-red-venta-celulares-peru-tienda-02.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\_104874464_gettyimages-151513768.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\appsettings.json
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\IFoundit.csproj.nuget.dgspec.json

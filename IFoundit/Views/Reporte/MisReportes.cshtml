@@ -3,7 +3,7 @@
 }
 <style>
     th {
-        color:#fff;    
+        color: #fff;
     }
 </style>
 <div class="container">
@@ -17,6 +17,12 @@
         <h3 class="pb-3 mb-4 font-italic border-bottom">
             Mis reportes
         </h3>
+
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <a class="btn btn-outline-warning" style="color:black" href="/reporte/create">Registrar nuevo</a>
+            </div>
+        </div>
         <div class="row">
             @foreach (var item in Model)
             {

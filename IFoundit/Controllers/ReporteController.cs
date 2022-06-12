@@ -25,7 +25,7 @@ namespace IFoundit.Controllers
             this.context = context;
             ihostingEnvironment = _hostingEnvironment;
         }
-      
+
         public async Task<IActionResult> Index(string sortOrder, string query, string currentFilter, string perdidos, string encontrados, int? page)
         {
             Usuario user = LoggedUser();
@@ -34,7 +34,7 @@ namespace IFoundit.Controllers
                 ViewBag.Usuario = user;
             }
 
-           // var num = context.Objetos.ToList();
+            // var num = context.Objetos.ToList();
             var contents = context.Objetos.Where(a => a.Ocultar == 1).AsQueryable();
             var usuarios = context.Usuarios.ToList();
             ViewBag.users = usuarios;
@@ -44,23 +44,23 @@ namespace IFoundit.Controllers
             ViewData["Objperdidos"] = string.IsNullOrEmpty(perdidos) ? "perdidos" : "";
             ViewData["ObjEncontrados"] = string.IsNullOrEmpty(perdidos) ? "encontrados" : "";
             if (query != null)
-                {
-                    page = 1;
-                }
-                else
-                {
-                    query = currentFilter;
+            {
+                page = 1;
+            }
+            else
+            {
+                query = currentFilter;
             }
 
-                ViewData["currentFilter"] = query;
-                ViewData["perdidos"] = query;
-                ViewData["encontrados"] = query;
+            ViewData["currentFilter"] = query;
+            ViewData["perdidos"] = query;
+            ViewData["encontrados"] = query;
 
-                if (!string.IsNullOrEmpty(query))
-                {
-                    contents = contents.Where(a=>a.Nombre.Contains(query));
-                    ViewBag.count = contents.Count();
-                }
+            if (!string.IsNullOrEmpty(query))
+            {
+                contents = contents.Where(a => a.Nombre.Contains(query));
+                ViewBag.count = contents.Count();
+            }
 
             switch (sortOrder)
             {
@@ -68,7 +68,7 @@ namespace IFoundit.Controllers
                     contents = contents.OrderBy(s => s.Nombre);
                     break;
                 case "perdidos":
-                    contents = contents.Where(a=>a.Estado== "Perdido");
+                    contents = contents.Where(a => a.Estado == "Perdido");
                     break;
                 case "encontrados":
                     contents = contents.Where(a => a.Estado == "Encontrado");
@@ -77,11 +77,12 @@ namespace IFoundit.Controllers
                     contents = contents.OrderByDescending(s => s.FechaPublicacion);
                     break;
             }
-            int pageSize = 6;
+            int pageSize = 9;
             return View(await PaginatedList<Objeto>.CreateAsync(contents.AsNoTracking(), page ?? 1, pageSize));
         }
 
-        public JsonResult getReportes() {
+        public JsonResult getReportes()
+        {
             var objectos = context.Objetos.ToList();
             return Json(objectos);
         }
@@ -93,15 +94,15 @@ namespace IFoundit.Controllers
             if (user != null)
             {
                 var obtenerObjeto = context.Objetos.Where(a => a.Id == id).FirstOrDefault();
-                if (obtenerObjeto!=null)
+                if (obtenerObjeto != null)
                 {
                     if (obtenerObjeto.Estado == "Perdido")
                     {
                         obtenerObjeto.Estado = "Encontrado";
-                        obtenerObjeto.Ocultar =0;
+                        obtenerObjeto.Ocultar = 0;
                         context.SaveChanges();
                     }
-                    else 
+                    else
                     {
                         obtenerObjeto.Estado = "Perdido";
                         obtenerObjeto.Ocultar = 0;
@@ -109,22 +110,22 @@ namespace IFoundit.Controllers
                     }
                 }
             }
-            return RedirectToAction("","dashboard");
+            return RedirectToAction("", "dashboard");
         }
-            [Authorize]
+        [Authorize]
         [HttpGet]
         public ActionResult MisReportes()
         {
             Usuario user = LoggedUser();
-            if (user!=null)
+            if (user != null)
             {
                 ViewBag.Usuario = user;
-                var misreportes = context.Objetos.Where(a=>a.IdUsuario==user.Id).ToList();
+                var misreportes = context.Objetos.Where(a => a.IdUsuario == user.Id).ToList();
                 return View(misreportes.OrderByDescending(a => a.FechaPublicacion));
             }
             else
             {
-            return View("","login");
+                return View("", "login");
             }
         }
 
@@ -134,11 +135,11 @@ namespace IFoundit.Controllers
         {
             Usuario user = LoggedUser();
             ViewBag.Usuario = user;
-           
-            var detailObject = context.Objetos.Where(a=>a.Id==id).FirstOrDefault();
+
+            var detailObject = context.Objetos.Where(a => a.Id == id).FirstOrDefault();
             if (detailObject == null)
             {
-                return RedirectToAction("Error","Home");
+                return RedirectToAction("Error", "Home");
             }
             var usuarios = context.Usuarios.ToList();
             ViewBag.users = usuarios;
@@ -160,7 +161,7 @@ namespace IFoundit.Controllers
             }
             var categorias = context.Categorias.ToList();
             ViewBag.categorias = categorias;
-            return View( new Objeto());
+            return View(new Objeto());
         }
 
         // POST: ReporteController/Create
@@ -226,23 +227,23 @@ namespace IFoundit.Controllers
 
         private void validarImagen(IFormFile photos)
         {
-            if (photos==null)
+            if (photos == null)
             {
-                ModelState.AddModelError("ImageNull","Por favor ingrese una imagen");
+                ModelState.AddModelError("ImageNull", "Por favor ingrese una imagen");
             }
         }
 
         private void validar(Objeto objeto)
         {
-            if (objeto.Nombre==null)
+            if (objeto.Nombre == null)
             {
-                ModelState.AddModelError("Nombre","El campo nombre es requerido");
-            } 
-            if (objeto.Recompensa==null)
-            {
-                ModelState.AddModelError("Recompensa","Ingrese una recompensa");
+                ModelState.AddModelError("Nombre", "El campo nombre es requerido");
             }
-            if (objeto.Categoria==null)
+            if (objeto.Recompensa == null)
+            {
+                ModelState.AddModelError("Recompensa", "Ingrese una recompensa");
+            }
+            if (objeto.Categoria == null)
             {
                 ModelState.AddModelError("Categoria", "Campo Categoria requerido");
             }
@@ -250,11 +251,11 @@ namespace IFoundit.Controllers
             {
                 ModelState.AddModelError("Estado", "Campo Categoria requerido");
             }
-            if (objeto.Descripcion==null)
+            if (objeto.Descripcion == null)
             {
                 ModelState.AddModelError("Descripcion", "Campo Descripcion requerido");
             }
-            if (objeto.Descripcion!=null)
+            if (objeto.Descripcion != null)
             {
                 if (objeto.Descripcion.Length < 75)
                 {
@@ -266,7 +267,7 @@ namespace IFoundit.Controllers
         // GET: ReporteController/Edit/5
         public ActionResult Editar(int id)
         {
-            var objeto = context.Objetos.Where(a=>a.Id==id).FirstOrDefault();
+            var objeto = context.Objetos.Where(a => a.Id == id).FirstOrDefault();
             var categorias = context.Categorias.ToList();
             ViewBag.categorias = categorias;
             return View(objeto);
