@@ -119,13 +119,9 @@ namespace IFoundit.Controllers
         {
             if (string.IsNullOrEmpty(usuario.Nombre))
             {
-                ModelState.AddModelError("Nombre", "Ingrese su nombre");
+                ModelState.AddModelError("Nombre", "Ingrese su nombre y apellido ");
             }
-
-            if (usuario.Sexo == 0)
-            {
-                ModelState.AddModelError("Sexo", "Seleccione una opción");
-            }
+            
             if (string.IsNullOrEmpty(usuario.Celular))
             {
                 ModelState.AddModelError("Celular", "Ingrese su número celular");
@@ -137,7 +133,7 @@ namespace IFoundit.Controllers
             }
             else if (!Regex.Match(usuario.Correo, @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$").Success)
             {
-                ModelState.AddModelError("Correo2", "Inválido | nombre@dominio.com");
+                ModelState.AddModelError("Correo2", "Correo inválido| nombre@dominio.com");
             }
 
             if (string.IsNullOrEmpty(usuario.Contrasenia))

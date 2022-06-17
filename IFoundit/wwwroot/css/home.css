@@ -9,7 +9,7 @@
 .centered {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-shadow: 4px 4px 3px #000;
+    text-shadow: 2px 3px 2px #000;
     position: absolute;
     top: 6%;
     left: 16%;
@@ -19,12 +19,12 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 290%);
 }
 
 .centered1 {
     color: white;
-    text-shadow: 4px 4px 3px #000;
+    text-shadow: 2px 3px 2px #000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
     top: 15%;

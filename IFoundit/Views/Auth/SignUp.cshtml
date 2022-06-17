@@ -3,7 +3,7 @@
     ViewData["Title"] = "SignUp";
 }
 <link href="~/css/register.css" rel="stylesheet" />
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
@@ -18,57 +18,59 @@
         <form action="/auth/signup" method="post">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <input type="text" class="fadeIn second" name="Nombre" placeholder="Nombres" autocomplete="off" value="@Model.Nombre">
+                    <input type="text" class="fadeIn second" name="Nombre" placeholder="Nombres y Apellidos" autocomplete="off" value="@Model.Nombre">
                     <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Nombre")</p>
                     <p style="font-size:11px;color:#808080">@Html.ValidationMessage("NombreSoloLetras")</p>
                 </div>
+                @*<div class="col-lg-6 col-md-6">
+                        <input value="@Model.Apellidos" type="text" class="fadeIn third" name="Apellidos" placeholder="Apellidos" autocomplete="off">
+                        <p style="font-size:11px;color:#808080">@Html.ValidationMessage("ApellidoSoloLetras")</p>
+                    </div>*@
                 <div class="col-lg-6 col-md-6">
-                    <input value="@Model.Apellidos" type="text" class="fadeIn third" name="Apellidos" placeholder="Apellidos" autocomplete="off">
-                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("ApellidoSoloLetras")</p>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <input value="@Model.Correo" type="text" class="fadeIn second" name="Correo" placeholder="Correo" autocomplete="off">
+                    <input value="@Model.Correo" type="text" class="fadeIn second" name="Correo" placeholder="Correo nombre@dominio.com" autocomplete="off">
                     <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo")</p>
                     <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo2")</p>
                     <p style="font-size:11px;color:#808080">@Html.ValidationMessage("CorreoDuplex")</p>
-                    
+
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <input value="@Model.Contrasenia" type="password" class="fadeIn third" name="Contrasenia" placeholder="Contraseña" autocomplete="off">
                     <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Contrasenia")</p>
                     <p style="font-size:11px;color:#808080">@Html.ValidationMessage("ContraseniaMenorA4")</p>
-                   
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <h6 style="color:#808080 " class="fadeIn second">Sexo</h6>
-                    <div style="display:inline; color:#808080">
-                        <input style="display:inline" class="fadeIn second" type="radio" value="M" name="Sexo">
-                        <p style="display:inline" class="fadeIn second">Masculino</p>
-                        <input style="display:inline" class="fadeIn second" type="radio" value="F" name="Sexo">
-                        <p style="display:inline" class="fadeIn second">Femenino</p>
-                        <input style="display:inline" class="fadeIn second" type="radio" value="N" name="Sexo">
-                        <p style="display:inline" class="fadeIn second">No Especifica</p>
-                        <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Sexo")</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 ">
-                    <input value="@Model.Celular" type="text" class="fadeIn third" name="Celular" placeholder="Celular" autocomplete="off">
-                    <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Celular")</p>
+                    <h6 style="color:#808080 " class="fadeIn second">El numero ingresado:</h6>
                     <div class="fadeIn second" style="display:inline; color:#808080">
                         <input style="display:inline" type="radio" value="1" name="TieneWhatsapp">
                         <p style="display:inline">Es whatsapp</p>
                         <input style="display:inline" type="radio" value="0" name="TieneWhatsapp">
                         <p style="display:inline">No es whatsapp</p>
-                    </div>
-                    </div>
-                    <br />
-                    <br />
-                    <div class="col-md-12 col-md-12">
-                        <input type="submit" class="fadeIn fourth" value="Registrarse">
+                        @*<input type="radio" name="bedStatus" id="0" checked="checked" value="0">No tiene whatsapp
+                        <input type="radio" name="bedStatus" id="1" value="1">Tiene whatsapp
+                        <div id="contenido"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+                        <a href="#" id="btn">Get External Content</a>
+
+                        <input id="target" type="button" value="ESTE BOTÓN APARECE Y DESAPARECE">
+                        <div id="target">
+                            <a href="hjgjhg">jhfhfh g</a>
+                        </div>
+                        <input type="radio" id="mostrar" name="boton1" value="Click para mostrar elementos">
+                        <input type="radio" id="ocultar" name="boton2" value="Click pora ocultar elementos">*@
                     </div>
                 </div>
-        </form>
+                    <div class="col-lg-6 col-md-6">
+                        <input value="@Model.Celular" type="text" class="fadeIn third" name="Celular" placeholder="Celular" autocomplete="off">
+                        <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Celular")</p>
+                    </div>
+                <div class="col-lg-6 col-md-6 ">
 
+                </div>
+                <br />
+                <br />
+                <div class="col-md-12 col-md-12">
+                    <input type="submit" class="fadeIn fourth" value="Crear una cuenta">
+                </div>
+            </div>
+        </form>
         <!-- Remind Passowrd -->
         <div id="formFooter">
             <a class="underlineHover" href="/auth/signin">Login</a>
@@ -76,4 +78,34 @@
 
     </div>
 </div>
-
+@*<script>
+    $(document).ready(function () {
+        $("a").click(function () {
+            $("#div1").append;
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('input:radio[name=bedStatus]:checked').change(function () {
+            if ($("input[name='bedStatus']:checked").val() == 0) {
+                $("#contenido").html("<b>No tiene whatsapp!</b>");
+            }
+            if ($("input[name='bedStatus']:checked").val() == 1) {
+                $("#contenido").html("<b>Tiene whatsap!</b>");
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#mostrar").on("click", function () {
+            $('#target').show(); //muestro mediante id
+           /* $('.target').show(); //muestro mediante clase*/
+        });
+        $("#ocultar").on("click", function () {
+            $('#target').hide(); //oculto mediante id
+           /* $('.target').hide(); //muestro mediante clase*/
+        });
+    });
+</script>*@

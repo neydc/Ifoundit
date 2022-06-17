@@ -1,34 +1,104 @@
 ﻿@{
     ViewData["Title"] = "Inicio";
 }
-<link href="~/css/home.css" rel="stylesheet" /> 
+<link href="~/css/home.css" rel="stylesheet" />
+<style>
+    .how-section1 {
+        margin-top: -15%;
+        padding: 10%;
+    }
 
+        .how-section1 h4 {
+            color: #fed136;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .how-section1 .subheading {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 20px;
+        }
+
+        .how-section1 .row {
+            margin-top: 10%;
+        }
+
+    .how-img {
+        text-align: center;
+    }
+
+        .how-img img {
+            width: 40%;
+        }
+</style>
 @*<a href="/contacto/index">Correos</a>*@
 <div class="div" style="background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */ color: #f1f1f1; /* Grey text */">
     <img style="border-bottom:solid 2px #808080" class="img" src="~/Images/Background.jpg" />
     <div>
-        <h1 class="centered">
-            Si has perdido algo y no sabes dónde buscar...
-          
-            <br />
+        <h1 class="centered" style="font-family: 'TypoUpright BT'; font-size: 70px">
+            ¿Perdiste tus pertenecias y no sabes dónde buscar?
+
         </h1>
-        <h2 class="centered1">
-            O si lo haz encontrado y te gustaría localizar a su dueño...
+        <h2 class="centered1" style="font-family:'TypoUpright BT'; font-size:80px">
+            ¿Encontraste algo y te gustaría devolverlo?
         </h2>
         <div class="row buttoncito">
             <div class="col-md-12">
                 <div class="text-center">
-                    <a class="btn btn-info" href="/reporte/create">¡He encontrado algo!</a>
+                    <a class="btn btn-outline-warning" href="/reporte/create">¡He encontrado algo!</a>
+                    <a class="btn btn-outline-warning" href="/reporte/create">¿Se te perdió algo?</a>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
+    
+</div>
 
-    <br />
-    <br />
-    <br />
-    <br />
-  
+<div class="how-section1">
+    <div class="row">
+        <div class="col-md-6 how-img">
+            <img src="https://image.ibb.co/dDW27U/Work_Section2_freelance_img1.png" class="rounded-circle img-fluid" alt="" />
+        </div>
+        <div class="col-md-6">
+            <h4>Encuentra tus objetos perdidos</h4>
+            <h4 class="subheading">Encuentra tus objetos perdidos.</h4>
+            <p class="text-muted">
+                Cuando un individuo
+                extravía alguna de sus pertenencias, puede que otra persona haya encontrado
+                esa pertenencia y desee devolverla a su propietario.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Describe tu pertenecia</h4>
+            <h4 class="subheading">Facilita la búsqueda de tu pertenencia.</h4>
+            <p class="text-muted">
+                Existen multitud de sistemas cuyo fin es que el individuo original pueda recuperar
+                sus pertenencias. Está aplicación web también comparte dicho objetivo. Sin embargo, se diferencia
+                principalmente porque busca cumplirlo mediante la
+                puesta en contacto de ambos usuarios.
+            </p>
+        </div>
+        <div class="col-md-6 how-img">
+            <img src="https://image.ibb.co/cHgKnU/Work_Section2_freelance_img2.png" class="rounded-circle img-fluid" alt="" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 how-img">
+            <img src="https://image.ibb.co/ctSLu9/Work_Section2_freelance_img3.png" class="rounded-circle img-fluid" alt="" />
+        </div>
+        <div class="col-md-6">
+            <h4>¿Por qué IFOUNDIT?</h4>
+            <h4 class="subheading"> Beneficios de nuestra aplicación web</h4>
+            <p class="text-muted">
+                Ambas personas, la que ha perdido el objeto y la que lo haya
+                encontrado, podran registrar el objeto en la aplicación web aportando detalles sobre el mismo
+                y sobre el contexto, como el lugar y la hora. De esta manera cada vez que una persona pierda o encuentre alguna pertenencia y desee devolverla, contará con esta aplicación para poder realizarlo.
+            </p>
+        </div>
+    </div>
+   
 </div>
 
 
