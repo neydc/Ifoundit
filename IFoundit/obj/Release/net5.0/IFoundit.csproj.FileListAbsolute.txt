@@ -311,3 +311,9 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\IFoundit.genrun
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Contacto\Index.cshtml.g.cs
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Nosotros\Index.cshtml.g.cs
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Reporte\Editar.cshtml.g.cs
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Recovery\Index.cshtml.g.cs
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Recovery\Succes.cshtml.g.cs
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\bin\Release\net5.0\SendGrid.dll
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\bin\Release\net5.0\StarkbankEcdsa.dll
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Recovery\Recoverytoken.cshtml.g.cs
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\Razor\Views\Recovery\Succes1.cshtml.g.cs

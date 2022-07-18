@@ -31,7 +31,7 @@ namespace IFoundit.Controllers
             }
             else
             {
-                return View("", "login");
+                return View("signin", "auth");
             }
         }
         private Usuario LoggedUser()

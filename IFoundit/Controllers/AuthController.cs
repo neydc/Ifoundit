@@ -97,12 +97,20 @@ namespace IFoundit.Controllers
         public IActionResult SignUp(Usuario usuario)
         {
             validarDatos(usuario);
-
+            
             if (ModelState.IsValid)
             {
+                if (usuario.TieneWhatsapp == 1)
+                {
+                    usuario.PermitirMostrarWhatsapp = 1;
+                }
+                else if (usuario.TieneWhatsapp == 0)
+                {
+                    usuario.PermitirMostrarWhatsapp = 0;
+                }
                 context.Usuarios.Add(usuario);
                 context.SaveChanges();
-                return RedirectToAction("", "login");
+                return RedirectToAction("signin", "auth");
             }
 
             return View(usuario);
@@ -124,7 +132,19 @@ namespace IFoundit.Controllers
             
             if (string.IsNullOrEmpty(usuario.Celular))
             {
-                ModelState.AddModelError("Celular", "Ingrese su número celular");
+                ModelState.AddModelError("Celular", "Ingrese su número de celular");
+            }
+            //if (usuario.TieneWhatsapp!=1 || usuario.TieneWhatsapp != 0)
+            //{
+            //    ModelState.AddModelError("whatsapp", "Eliga una opción");
+            //}
+            if (usuario.Celular!=null)
+            {
+               
+                if (usuario.Celular.Length !=9)
+                {
+                    ModelState.AddModelError("Celular2", "Ingrese 9 dígitos");
+                }
             }
 
             if (string.IsNullOrEmpty(usuario.Correo))

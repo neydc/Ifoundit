@@ -110,7 +110,7 @@ namespace IFoundit.Controllers
                     }
                 }
             }
-            return RedirectToAction("", "dashboard");
+            return RedirectToAction("misreportes", "reporte");
         }
         [Authorize]
         [HttpGet]

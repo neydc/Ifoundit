@@ -62,7 +62,8 @@
 
                                         @if (item.EstadoWhatsapp == true)
                                         {
-                                            <a target="_blank" href="https://api.whatsapp.com/send?phone=@item.WhatsappDeUsuario&text=He visto esto en IFOUNDIT"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
+                                            var mostrarwasap = "51" + item.WhatsappDeUsuario;
+                                            <a target="_blank" href="https://api.whatsapp.com/send?phone=@mostrarwasap&text=He visto esto en IFOUNDIT"><img style="width:35px" src="/Images/logoWh.png" alt=""> <span>Ir a Whatsapp</span></a>
                                         }
                                         else
                                         {

@@ -9,12 +9,15 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwr
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\Background.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\billeteradama.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\billeteramujer.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\estafas-wallapop-vibbo.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\fondo.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\fondopro.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\Logo.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\logoWh.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\Objetos-perdidos-730x411-SP.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\recortada.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\Images\telefono.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\js\Events.js
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\js\site.js
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -57,7 +60,6 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwr
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\12400874_557701381057896_477035074637791533_n.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\1366_2000.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\1611773170NX.HSHAA.003-1.jpg
-C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\1632524115_05a5a9347f8c6955946f92201d6b2c53.197368.jpeg.crdownload
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\2 283787524_5159759220786587_524765386799830556_n.png
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\3 285645437_5250165901696867_8115018509618013935_n.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\4 keys1.jpg
@@ -118,10 +120,14 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwr
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\maxresdefault.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\mochila-perdida-en-el-banco-la-mujer-perdió-su-un-de-madera-195644484.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\motog.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Objetos-perdidos-730x411-SP.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\portafoliodocumentos.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\rBVaHFZQFZCAFNTDAAHZEZR2mps627.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\Sansung.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\smartphones-peru-iphone-xr-128gb-red-venta-celulares-peru-tienda-02.jpg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\subirUrgente.png
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\WhatsApp Image 2022-07-17 at 2.58.27 PM.jpeg
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\WhatsApp Image 2022-07-17 at 2.58.28 PM.jpeg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\wwwroot\PostImg\_104874464_gettyimages-151513768.jpg
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\appsettings.json
@@ -160,6 +166,8 @@ C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\Micr
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\SendGrid.dll
+C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\StarkbankEcdsa.dll
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\System.Composition.AttributedModel.dll
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\System.Composition.Convention.dll
 C:\Users\ndiaz\source\repos\IFoundit\IFoundit\obj\Release\net5.0\PubTmp\Out\System.Composition.Hosting.dll

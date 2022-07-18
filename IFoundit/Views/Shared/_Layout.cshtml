@@ -14,6 +14,32 @@
     <script src="https://use.fontawesome.com/44b4026f96.js"></script>
     @*favicon*@
     <link rel="shortcut icon" type="image/jpg" href="/Images/Logo.png" />
+
+    <style>
+        .navbar {
+           
+            font-size: 16px !important;
+          
+            font-family: 'Bodoni Bk BT';
+        }
+        .navbar li a, .navbar .navbar-brand {
+            color: #fff !important;
+            background-color: rgb(72 72 72 / 0.90);
+        }
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #fed136 !important;
+            background-color: rgb(72 72 72 / 0.90);
+        }
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+            background-color: rgb(72 72 72 / 0.90);
+        }
+        .dropdown li a {
+            color: #f4511e !important;
+            background-color: rgb(72 72 72 / 0.90);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -53,7 +79,7 @@
                                 <text>Cuenta</text>
                                   }
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: rgb(72 72 72 / 0.90);">
                                     @if (ViewBag.Usuario == null)
                                     {
                                         <a class="dropdown-item" href="/auth/signin">Login</a>
@@ -95,11 +121,11 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 cizgi">
                         <div class="card bg-secondary border-0">
                             <div class="card-body text-light text-center">
-                                <h5 class="card-title text-white display-4" style="font-size:30px">Ifoundit</h5>
-                                <p class="d-inline lead">
-                                    Búsqueda de objetos perdidos  y devolución de objetos encontrados
+                                <h5 class="card-title text-white display-4" style="font-size:22px">Ifoundit</h5>
+                                <p style="font-size:16px" class="d-inline lead">
+                                    Reporte y recuperación de objetos perdidos y encontrados en la ciudad de Cajamarca
                                 </p>
-
+                                
                             </div>
                         </div>
                     </div>
@@ -107,11 +133,11 @@
                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 cizgi">
                         <div class="card bg-secondary border-0">
                             <div class="card-body text-center">
-                                <h5 class="card-title text-white display-4" style="font-size:30px">Contacto</h5>
-                                <a class="text-light d-block lead" style="margin-left: -20px" href="#">
+                                <h5 class="card-title text-white display-4" style="font-size:22px">Contacto</h5>
+                                <a class="text-light d-block lead" style="margin-left: -20px; font-size: 16px" href="#">
                                     <i class="fa fa-phone mr-2"></i>+51 968 362 425
                                 </a>
-                                <a class="text-light d-block lead" href="mailto:info@ifoundit.com">
+                                <a class="text-light d-block lead" style="font-size: 16px" href="mailto:info@ifoundit.com">
                                     <i class="fa fa-envelope mr-2"></i>info@ifoundit.com
                                 </a>
                             </div>
@@ -121,13 +147,13 @@
                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                         <div class="card bg-secondary border-0">
                             <div class="card-body text-center">
-                                <h5 class="card-title text-white display-4" style="font-size:30px">Redes Sociales</h5>
+                                <h5 class="card-title text-white display-4" style="font-size:22px">Redes Sociales</h5>
 
                                 <a class="text-light" href="https://www.facebook.com/Ifoundit-101831245891009" target="_blank"><i class="fa fa-facebook-square fa-fw fa-2x"></i></a>
 
                                 @*<a class="text-light" href="#"><i class="fa fa-twitter-square fa-fw fa-2x"></i></a>*@
 
-                                <a class="text-light" href="#"><i class="fa fa-instagram fa-fw fa-2x"></i></a>
+                                @*<a class="text-light" href="#"><i class="fa fa-instagram fa-fw fa-2x"></i></a>*@
 
                                 @*<a class="text-light" href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>*@
 
@@ -141,8 +167,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="text-center">
-                            <p style="color:white">
-                                &copy; 2021 - IFoundit - Todos los derechos reservados @*Diseño y Programación*@
+                            <p style="color:white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                                &copy; IFoundit - Todos los derechos reservados @*Diseño y Programación*@
                                 @*<a style="color:white" href=""><strong>...</strong></a>*@
                             </p>
                         </div>

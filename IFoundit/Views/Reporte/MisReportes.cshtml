@@ -35,7 +35,7 @@
                             </h6>
                             <div class="mb-1 text-muted small">@item.FechaPublicacion</div>
                             <p class="card-text mb-auto">@item.Descripcion.Substring(0, 85)...</p>
-                            <a class="btn btn-outline-warning btn-sm" role="button" href="#">@item.Estado</a>
+                            <a class="btn btn-outline-warning btn-sm" role="button" href="/reporte/change?id=@item.Id">@item.Estado</a>
                         </div>
                         <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="/PostImg/@item.Imagen" style="width: 200px;object-fit:cover">
                     </div>

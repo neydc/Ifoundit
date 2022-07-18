@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Recuperar Contraseña";
+}
+
+<link href="~/css/layout.css" rel="stylesheet" />
+<br />
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first">
+            <br />
+            <h4 style="color:#808080">Ingrese correo de recuperación</h4>
+        </div>
+        <br />
+        <form action="/recovery/index" method="post">
+            <input type="text" id="login" class="fadeIn second" name="correo" placeholder="Correo" value="@ViewBag.correoReturn">
+            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo")</p>
+            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo2")</p>
+            <p style="font-size:11px;color:#808080">@Html.ValidationMessage("CorreoNoEncontrado")</p>
+           <div class="container">
+                <input type="submit" class="fadeIn fourth" value="Enviar">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "SignIn";
 }
 
@@ -18,18 +17,19 @@
         <!-- Login Form -->
         <form action="/auth/signin" method="post">
             <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Incorrecto")</p>
-            <input type="text" id="login" class="fadeIn second" name="correo" placeholder="Correo*" value="@ViewBag.usuario2">
+            <input type="text" id="login" class="fadeIn second" name="correo" placeholder="Correo" value="@ViewBag.usuario2">
             <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Correo")</p>
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña*" value="@ViewBag.password">
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" value="@ViewBag.password">
             <p style="font-size:11px;color:#808080">@Html.ValidationMessage("Password")</p>
             <div class="container">
                 <input type="submit" class="fadeIn fourth" value="Iniciar Sesión">
             </div>
+
         </form>
 
+        <a class="underlineHover" href="/recovery/">¿Olvidó su contraseña?</a>
         <!-- Remind Passowrd -->
         <div id="formFooter">
-            @*<a class="underlineHover" href="/#">¿Olvidó su contraseña?</a>*@ 
             <a class="underlineHover" href="/auth/signup">Registrarse</a>
         </div>
 
